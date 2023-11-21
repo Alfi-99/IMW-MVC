@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using IMW_MVC.Model.Context;
 using IMW_MVC.Model.Repository;
 using IMW_MVC.Model.Entity;
-using MySql.Data.MySqlClient;
 
 namespace IMW_MVC.Controller
 {
@@ -28,7 +27,45 @@ namespace IMW_MVC.Controller
 
             return valid;
         }
-        
+        public int Create(Pengguna user)
+        {
+            bool valid = DaftarValidasi(user.nama_pengguna);
+            int result = 0;
+            if (string.IsNullOrEmpty(user.nama_pengguna))
+            {
+                MessageBox.Show("Nama harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(user.katasandi))
+            {
+                MessageBox.Show("Nama harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if(valid == true)
+            {
+                MessageBox.Show("Akun dengan nama berikut sudah ada !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PenggunaRepository(context);
+                result = _repository.Create(user);
+            }
+            if (result > 0)
+            {
+                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return result;
+        }
+
+
 
         //Login
         public bool LoginValidasi(string nama_pengguna)
