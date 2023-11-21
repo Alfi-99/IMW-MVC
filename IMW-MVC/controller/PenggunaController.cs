@@ -68,13 +68,13 @@ namespace IMW_MVC.Controller
 
 
         //Login
-        public bool LoginValidasi(string nama_pengguna)
+        public bool LoginValidasi(string nama_pengguna, string password)
         {
             bool valid = false;
             using (DbContext context = new DbContext())
             {
                 _repository = new PenggunaRepository(context);
-                valid = _repository.DaftarValidasi(nama_pengguna);
+                valid = _repository.LoginValidasi(nama_pengguna, password);
             }
 
             return valid;

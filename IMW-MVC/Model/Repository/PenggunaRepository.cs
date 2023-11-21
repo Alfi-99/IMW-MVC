@@ -58,7 +58,7 @@ namespace IMW_MVC.Model.Repository
             {
                 cmd.Parameters.AddWithValue("@nama_pengguna", user.nama_pengguna);
                 cmd.Parameters.AddWithValue("@katasandi", user.katasandi);
-                cmd.Parameters.AddWithValue("@katasandi", datenow);
+                cmd.Parameters.AddWithValue("@tanggal_buat", datenow);
                 try
                 {
                     result = cmd.ExecuteNonQuery();
@@ -76,11 +76,11 @@ namespace IMW_MVC.Model.Repository
             bool valid = false;
             try
             {
-                string sql = @"select nama_pengguna, katasandi from pengguna where nama_pengguna = @nama_pengguna AND password = @password";
+                string sql = @"select nama_pengguna, katasandi from pengguna where nama_pengguna = @nama_pengguna AND katasandi = @password";
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
                     cmd.Parameters.AddWithValue("@nama_pengguna", nama_pengguna);
-                    cmd.Parameters.AddWithValue("@passsword", password);
+                    cmd.Parameters.AddWithValue("@password", password);
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())

@@ -66,6 +66,12 @@
     <Compile Include="View\Daftar.Designer.cs">
       <DependentUpon>Daftar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Daftar.resx">
+      <DependentUpon>Daftar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

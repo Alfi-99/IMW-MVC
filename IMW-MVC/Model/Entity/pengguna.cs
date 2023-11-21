@@ -14,5 +14,5 @@ namespace IMW_MVC.Model.Entity
         public string status { get; set; }
         public string katasandi { get; set; }
         public string tanggal_buat { get; set; }
-
+    }
 }
