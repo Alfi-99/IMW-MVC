@@ -51,10 +51,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Context\DbContext.cs" />
-    <Compile Include="Model\Entity\gudang.cs" />
-    <Compile Include="Model\Entity\pengguna.cs" />
-    <Compile Include="Model\Entity\produk.cs" />
-    <Compile Include="Model\Entity\transaksi.cs" />
+    <Compile Include="Model\Entity\Gudang.cs" />
+    <Compile Include="Model\Entity\Pengguna.cs" />
+    <Compile Include="Model\Entity\Produk.cs" />
+    <Compile Include="Model\Entity\Transaksi.cs" />
+    <Compile Include="Model\Repository\GudangRepository.cs" />
+    <Compile Include="Model\Repository\PenggunaRepository.cs" />
+    <Compile Include="Model\Repository\ProdukRepository.cs" />
+    <Compile Include="Model\Repository\TransaksiRepository.cs" />
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Model\Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
