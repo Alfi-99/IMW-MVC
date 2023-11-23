@@ -43,11 +43,12 @@
             // 
             this.sh_pass.AutoSize = true;
             this.sh_pass.BackColor = System.Drawing.Color.Transparent;
-            this.sh_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sh_pass.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sh_pass.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.sh_pass.Location = new System.Drawing.Point(190, 323);
+            this.sh_pass.Location = new System.Drawing.Point(267, 386);
+            this.sh_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sh_pass.Name = "sh_pass";
-            this.sh_pass.Size = new System.Drawing.Size(115, 17);
+            this.sh_pass.Size = new System.Drawing.Size(140, 24);
             this.sh_pass.TabIndex = 18;
             this.sh_pass.Text = "Show Password";
             this.sh_pass.UseVisualStyleBackColor = false;
@@ -56,21 +57,25 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(69, 109);
+            this.label4.Location = new System.Drawing.Point(102, 125);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(231, 25);
+            this.label4.Size = new System.Drawing.Size(294, 38);
             this.label4.TabIndex = 17;
             this.label4.Text = "System Management";
             // 
             // btn_daftar
             // 
             this.btn_daftar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_daftar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_daftar.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_daftar.ForeColor = System.Drawing.Color.White;
-            this.btn_daftar.Location = new System.Drawing.Point(74, 408);
+            this.btn_daftar.Location = new System.Drawing.Point(99, 502);
+            this.btn_daftar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_daftar.Name = "btn_daftar";
-            this.btn_daftar.Size = new System.Drawing.Size(231, 30);
+            this.btn_daftar.Size = new System.Drawing.Size(308, 37);
             this.btn_daftar.TabIndex = 16;
             this.btn_daftar.Text = "Daftar";
             this.btn_daftar.UseVisualStyleBackColor = false;
@@ -79,10 +84,13 @@
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_login.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(74, 361);
+            this.btn_login.Location = new System.Drawing.Point(99, 444);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(231, 30);
+            this.btn_login.Size = new System.Drawing.Size(308, 37);
             this.btn_login.TabIndex = 15;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = false;
@@ -91,58 +99,63 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label3.Location = new System.Drawing.Point(85, 262);
+            this.label3.Location = new System.Drawing.Point(95, 318);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "Password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(85, 171);
+            this.label2.Location = new System.Drawing.Point(95, 236);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "Username";
             // 
             // pass_input
             // 
-            this.pass_input.Location = new System.Drawing.Point(74, 278);
+            this.pass_input.Location = new System.Drawing.Point(99, 342);
+            this.pass_input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pass_input.Multiline = true;
             this.pass_input.Name = "pass_input";
             this.pass_input.PasswordChar = '*';
-            this.pass_input.Size = new System.Drawing.Size(231, 30);
+            this.pass_input.Size = new System.Drawing.Size(307, 36);
             this.pass_input.TabIndex = 12;
             // 
             // name_input
             // 
-            this.name_input.Location = new System.Drawing.Point(74, 187);
+            this.name_input.Location = new System.Drawing.Point(99, 260);
+            this.name_input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.name_input.Multiline = true;
             this.name_input.Name = "name_input";
-            this.name_input.Size = new System.Drawing.Size(231, 30);
+            this.name_input.Size = new System.Drawing.Size(307, 36);
             this.name_input.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label1.Location = new System.Drawing.Point(115, 75);
+            this.label1.Location = new System.Drawing.Point(167, 87);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 25);
+            this.label1.Size = new System.Drawing.Size(163, 38);
             this.label1.TabIndex = 10;
             this.label1.Text = "Warehouse\r\n";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 512);
+            this.ClientSize = new System.Drawing.Size(499, 630);
             this.Controls.Add(this.sh_pass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_daftar);
@@ -152,6 +165,8 @@
             this.Controls.Add(this.pass_input);
             this.Controls.Add(this.name_input);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
