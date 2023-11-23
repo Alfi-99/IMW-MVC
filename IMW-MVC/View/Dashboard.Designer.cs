@@ -34,6 +34,8 @@
             this.TabGudang = new System.Windows.Forms.TabPage();
             this.user_nama = new System.Windows.Forms.Label();
             this.lvt = new System.Windows.Forms.ListView();
+            this.btn_tambah_transaksi = new System.Windows.Forms.Button();
+            this.btn_tampil_transaksi = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.SuspendLayout();
@@ -46,16 +48,18 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 91);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1536, 543);
+            this.tabControl1.Size = new System.Drawing.Size(1536, 745);
             this.tabControl1.TabIndex = 0;
             // 
             // TabTransaksi
             // 
+            this.TabTransaksi.Controls.Add(this.btn_tampil_transaksi);
+            this.TabTransaksi.Controls.Add(this.btn_tambah_transaksi);
             this.TabTransaksi.Controls.Add(this.lvt);
             this.TabTransaksi.Location = new System.Drawing.Point(4, 25);
             this.TabTransaksi.Name = "TabTransaksi";
             this.TabTransaksi.Padding = new System.Windows.Forms.Padding(3);
-            this.TabTransaksi.Size = new System.Drawing.Size(1528, 514);
+            this.TabTransaksi.Size = new System.Drawing.Size(1528, 716);
             this.TabTransaksi.TabIndex = 0;
             this.TabTransaksi.Text = "Transaksi";
             this.TabTransaksi.UseVisualStyleBackColor = true;
@@ -93,9 +97,27 @@
             this.lvt.HideSelection = false;
             this.lvt.Location = new System.Drawing.Point(0, 0);
             this.lvt.Name = "lvt";
-            this.lvt.Size = new System.Drawing.Size(1525, 511);
+            this.lvt.Size = new System.Drawing.Size(1525, 585);
             this.lvt.TabIndex = 0;
             this.lvt.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_tambah_transaksi
+            // 
+            this.btn_tambah_transaksi.Location = new System.Drawing.Point(19, 601);
+            this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
+            this.btn_tambah_transaksi.Size = new System.Drawing.Size(132, 23);
+            this.btn_tambah_transaksi.TabIndex = 1;
+            this.btn_tambah_transaksi.Text = "Tambah";
+            this.btn_tambah_transaksi.UseVisualStyleBackColor = true;
+            // 
+            // btn_tampil_transaksi
+            // 
+            this.btn_tampil_transaksi.Location = new System.Drawing.Point(180, 601);
+            this.btn_tampil_transaksi.Name = "btn_tampil_transaksi";
+            this.btn_tampil_transaksi.Size = new System.Drawing.Size(119, 23);
+            this.btn_tampil_transaksi.TabIndex = 2;
+            this.btn_tampil_transaksi.Text = "Tampil";
+            this.btn_tampil_transaksi.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
@@ -122,5 +144,7 @@
         private System.Windows.Forms.TabPage TabGudang;
         private System.Windows.Forms.ListView lvt;
         private System.Windows.Forms.Label user_nama;
+        private System.Windows.Forms.Button btn_tampil_transaksi;
+        private System.Windows.Forms.Button btn_tambah_transaksi;
     }
 }

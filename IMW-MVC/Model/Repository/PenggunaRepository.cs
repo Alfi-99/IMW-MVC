@@ -32,8 +32,6 @@ namespace IMW_MVC.Model.Repository
                     {
                         if (reader.Read())
                         {
-                            Pengguna user = new Pengguna();
-                            user.simpan_nama_pengguna = reader["nama_pengguna"].ToString();
                             valid = true;
                         }
                         else
