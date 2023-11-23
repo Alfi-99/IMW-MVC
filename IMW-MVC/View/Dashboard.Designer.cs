@@ -30,12 +30,12 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabTransaksi = new System.Windows.Forms.TabPage();
+            this.btn_tampil_transaksi = new System.Windows.Forms.Button();
+            this.btn_tambah_transaksi = new System.Windows.Forms.Button();
+            this.lvt = new System.Windows.Forms.ListView();
             this.TabProduk = new System.Windows.Forms.TabPage();
             this.TabGudang = new System.Windows.Forms.TabPage();
             this.user_nama = new System.Windows.Forms.Label();
-            this.lvt = new System.Windows.Forms.ListView();
-            this.btn_tambah_transaksi = new System.Windows.Forms.Button();
-            this.btn_tampil_transaksi = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.SuspendLayout();
@@ -45,10 +45,11 @@
             this.tabControl1.Controls.Add(this.TabTransaksi);
             this.tabControl1.Controls.Add(this.TabProduk);
             this.tabControl1.Controls.Add(this.TabGudang);
-            this.tabControl1.Location = new System.Drawing.Point(12, 91);
+            this.tabControl1.Location = new System.Drawing.Point(9, 74);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1536, 745);
+            this.tabControl1.Size = new System.Drawing.Size(1434, 605);
             this.tabControl1.TabIndex = 0;
             // 
             // TabTransaksi
@@ -56,29 +57,64 @@
             this.TabTransaksi.Controls.Add(this.btn_tampil_transaksi);
             this.TabTransaksi.Controls.Add(this.btn_tambah_transaksi);
             this.TabTransaksi.Controls.Add(this.lvt);
-            this.TabTransaksi.Location = new System.Drawing.Point(4, 25);
+            this.TabTransaksi.Location = new System.Drawing.Point(4, 22);
+            this.TabTransaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabTransaksi.Name = "TabTransaksi";
-            this.TabTransaksi.Padding = new System.Windows.Forms.Padding(3);
-            this.TabTransaksi.Size = new System.Drawing.Size(1528, 716);
+            this.TabTransaksi.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabTransaksi.Size = new System.Drawing.Size(1426, 579);
             this.TabTransaksi.TabIndex = 0;
             this.TabTransaksi.Text = "Transaksi";
             this.TabTransaksi.UseVisualStyleBackColor = true;
             // 
+            // btn_tampil_transaksi
+            // 
+            this.btn_tampil_transaksi.Location = new System.Drawing.Point(135, 488);
+            this.btn_tampil_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tampil_transaksi.Name = "btn_tampil_transaksi";
+            this.btn_tampil_transaksi.Size = new System.Drawing.Size(103, 19);
+            this.btn_tampil_transaksi.TabIndex = 2;
+            this.btn_tampil_transaksi.Text = "Tampil";
+            this.btn_tampil_transaksi.UseVisualStyleBackColor = true;
+            this.btn_tampil_transaksi.Click += new System.EventHandler(this.btn_tampil_transaksi_Click);
+            // 
+            // btn_tambah_transaksi
+            // 
+            this.btn_tambah_transaksi.Location = new System.Drawing.Point(14, 488);
+            this.btn_tambah_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
+            this.btn_tambah_transaksi.Size = new System.Drawing.Size(99, 19);
+            this.btn_tambah_transaksi.TabIndex = 1;
+            this.btn_tambah_transaksi.Text = "Tambah";
+            this.btn_tambah_transaksi.UseVisualStyleBackColor = true;
+            this.btn_tambah_transaksi.Click += new System.EventHandler(this.btn_tambah_transaksi_Click);
+            // 
+            // lvt
+            // 
+            this.lvt.HideSelection = false;
+            this.lvt.Location = new System.Drawing.Point(0, 0);
+            this.lvt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvt.Name = "lvt";
+            this.lvt.Size = new System.Drawing.Size(1426, 464);
+            this.lvt.TabIndex = 0;
+            this.lvt.UseCompatibleStateImageBehavior = false;
+            // 
             // TabProduk
             // 
-            this.TabProduk.Location = new System.Drawing.Point(4, 25);
+            this.TabProduk.Location = new System.Drawing.Point(4, 22);
+            this.TabProduk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabProduk.Name = "TabProduk";
-            this.TabProduk.Padding = new System.Windows.Forms.Padding(3);
-            this.TabProduk.Size = new System.Drawing.Size(1296, 428);
+            this.TabProduk.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabProduk.Size = new System.Drawing.Size(1144, 579);
             this.TabProduk.TabIndex = 1;
             this.TabProduk.Text = "Produk";
             this.TabProduk.UseVisualStyleBackColor = true;
             // 
             // TabGudang
             // 
-            this.TabGudang.Location = new System.Drawing.Point(4, 25);
+            this.TabGudang.Location = new System.Drawing.Point(4, 22);
+            this.TabGudang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabGudang.Name = "TabGudang";
-            this.TabGudang.Size = new System.Drawing.Size(1296, 428);
+            this.TabGudang.Size = new System.Drawing.Size(1144, 579);
             this.TabGudang.TabIndex = 2;
             this.TabGudang.Text = "Gudang";
             this.TabGudang.UseVisualStyleBackColor = true;
@@ -86,47 +122,21 @@
             // user_nama
             // 
             this.user_nama.AutoSize = true;
-            this.user_nama.Location = new System.Drawing.Point(1059, 24);
+            this.user_nama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_nama.Location = new System.Drawing.Point(1212, 27);
+            this.user_nama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.user_nama.Name = "user_nama";
-            this.user_nama.Size = new System.Drawing.Size(77, 16);
+            this.user_nama.Size = new System.Drawing.Size(101, 20);
             this.user_nama.TabIndex = 0;
             this.user_nama.Text = "User_nama";
             // 
-            // lvt
-            // 
-            this.lvt.HideSelection = false;
-            this.lvt.Location = new System.Drawing.Point(0, 0);
-            this.lvt.Name = "lvt";
-            this.lvt.Size = new System.Drawing.Size(1525, 585);
-            this.lvt.TabIndex = 0;
-            this.lvt.UseCompatibleStateImageBehavior = false;
-            // 
-            // btn_tambah_transaksi
-            // 
-            this.btn_tambah_transaksi.Location = new System.Drawing.Point(19, 601);
-            this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
-            this.btn_tambah_transaksi.Size = new System.Drawing.Size(132, 23);
-            this.btn_tambah_transaksi.TabIndex = 1;
-            this.btn_tambah_transaksi.Text = "Tambah";
-            this.btn_tambah_transaksi.UseVisualStyleBackColor = true;
-            // 
-            // btn_tampil_transaksi
-            // 
-            this.btn_tampil_transaksi.Location = new System.Drawing.Point(180, 601);
-            this.btn_tampil_transaksi.Name = "btn_tampil_transaksi";
-            this.btn_tampil_transaksi.Size = new System.Drawing.Size(119, 23);
-            this.btn_tampil_transaksi.TabIndex = 2;
-            this.btn_tampil_transaksi.Text = "Tampil";
-            this.btn_tampil_transaksi.UseVisualStyleBackColor = true;
-            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 832);
+            this.ClientSize = new System.Drawing.Size(1443, 676);
             this.Controls.Add(this.user_nama);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.tabControl1.ResumeLayout(false);

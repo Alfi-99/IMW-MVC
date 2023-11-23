@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using IMW_MVC.Model.Entity;
 using IMW_MVC.Model.Context;
+using System.Runtime.CompilerServices;
+using MySqlX.XDevAPI.Common;
+using System.Data;
 
 namespace IMW_MVC.Model.Repository
 {
@@ -48,6 +51,116 @@ namespace IMW_MVC.Model.Repository
                 System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
             }
             return list;
+        }
+        //Select ComboBox Data
+        public List<Produk> ReadProdukOnlyForComboBox()
+        {
+            List<Produk> list = new List<Produk>();
+            try
+            {
+                string sql = @"select * from produk";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Produk brg = new Produk();
+                            brg.Product_ID = int.Parse(reader["Product_ID"].ToString());
+                            brg.Nama_Barang = reader["Nama_Barang"].ToString();
+                            brg.Deskripsi = reader["Deskripsi"].ToString();
+                            brg.Jumlah_Barang = int.Parse(reader["Jumlah_barang"].ToString()) ;
+                            list.Add(brg);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
+            }
+            return list;
+        }
+        public List<Produk> ReadForFillForm(int item_id)
+        {
+            List<Produk> list = new List<Produk>();
+            try
+            {
+                string sql = @"select * from produk where Product_ID = @itemid";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@itemid", item_id);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Produk brg = new Produk();
+                            brg.Product_ID = int.Parse(reader["Product_ID"].ToString());
+                            brg.Nama_Barang = reader["Nama_Barang"].ToString();
+                            brg.Deskripsi = reader["Deskripsi"].ToString();
+                            brg.Jumlah_Barang = int.Parse(reader["Jumlah_barang"].ToString());
+                            brg.Harga = int.Parse(reader["Harga"].ToString());
+                            list.Add(brg);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
+            }
+            return list;
+        }
+        //Ambil ID_Pengguna
+        public int PenggunaID(string nama_pengguna)
+        {
+            int result = 0;
+            try
+            {
+                string ambil_pengguna = @"select * from pengguna where nama_pengguna = '" + nama_pengguna + "'";
+                using (MySqlCommand cmd = new MySqlCommand(ambil_pengguna, _conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result = int.Parse(reader["ID_Pengguna"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+            }
+            return result;
+
+
+        }
+        //Add data Transaksi
+        public int Create_Barang_Keluar(Transaksi transaksi, int id_pengguna)
+        {
+            string strFormat = "yyyy-MM-dd";
+            string datenow = DateTime.Now.ToString(strFormat);
+            int result = 0;
+            string sql = @"insert into transaksi (Product_ID, ID_pengguna, Tanggal_Transaksi, Jenis_Transaksi, Jumlah_Barang) values (@Product_ID, @ID_pengguna, @Tanggal_Transaksi, @Jenis_Transaksi, @Jumlah_Barang)";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@Product_ID", transaksi.Product_ID);
+                cmd.Parameters.AddWithValue("@ID_pengguna", id_pengguna);
+                cmd.Parameters.AddWithValue("@Tanggal_Transaksi", datenow);
+                cmd.Parameters.AddWithValue("@Jenis_Transaksi", transaksi.Jenis_Transaksi);
+                cmd.Parameters.AddWithValue("@Jumlah_Barang", transaksi.jumlah_barang);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+            return result;
         }
     }
 }

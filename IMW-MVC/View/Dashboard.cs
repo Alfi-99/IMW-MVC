@@ -15,6 +15,7 @@ namespace IMW_MVC.View
 {
     public partial class Dashboard : Form
     {
+        public static string nama_pengguna = Login.nama_pengguna;
         private List<Transaksi> listTransaksi = new List<Transaksi>();
         private TransaksiController controller;
 
@@ -46,7 +47,7 @@ namespace IMW_MVC.View
         {
             lvt.Items.Clear();
             listTransaksi = controller.ReadAll();
-            if(listTransaksi != null)
+            if (listTransaksi != null)
             {
                 MessageBox.Show("Hore");
             }
@@ -68,6 +69,45 @@ namespace IMW_MVC.View
                 item.SubItems.Add(trs.User);
                 lvt.Items.Add(item);
             }
+        }
+        private void OnCreateEventHandler(Transaksi trsansaksi)
+        {
+            lvt.Items.Clear();
+            listTransaksi = controller.ReadAll();
+            if (listTransaksi != null)
+            {
+                MessageBox.Show("Hore");
+            }
+            else
+            {
+                MessageBox.Show("Kosong");
+            }
+            foreach (var trs in listTransaksi)
+            {
+                var noUrut = lvt.Items.Count + 1;
+                var item = new ListViewItem(noUrut.ToString());
+                item.SubItems.Add(trs.Nama_barang);
+                item.SubItems.Add(trs.Tanggal_Masuk);
+                item.SubItems.Add(trs.Deskripsi);
+                item.SubItems.Add(trs.jumlah_barang.ToString());
+                item.SubItems.Add(trs.harga_barang.ToString());
+                item.SubItems.Add(trs.Gudang);
+                item.SubItems.Add(trs.Alamat);
+                item.SubItems.Add(trs.User);
+                lvt.Items.Add(item);
+            }
+        }
+        private void btn_tambah_transaksi_Click(object sender, EventArgs e)
+        {
+            AddTransaksi addTransaksi = new AddTransaksi("Tambah Data Transaksi", controller);
+            addTransaksi.OnCreate += OnCreateEventHandler;
+            // tampilkan form entry mahasiswa
+            addTransaksi.ShowDialog();
+        }
+
+        private void btn_tampil_transaksi_Click(object sender, EventArgs e)
+        {
+            LoadDataTransaksi();
         }
     }
 }
