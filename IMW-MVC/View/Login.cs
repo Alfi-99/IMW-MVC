@@ -19,6 +19,7 @@ namespace IMW_MVC
     {
         private PenggunaController controller;
         private Pengguna user;
+        public static string nama_pengguna;
         public Login()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace IMW_MVC
             bool result = controller.LoginValidasi(user.nama_pengguna, user.katasandi);
             if(result == true)
             {
+                nama_pengguna = user.nama_pengguna;
                 MessageBox.Show("Selamat Anda Berhasil Login");
                 this.Hide();
                 Dashboard dash = new Dashboard();
