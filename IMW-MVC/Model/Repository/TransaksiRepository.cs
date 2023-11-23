@@ -137,7 +137,7 @@ namespace IMW_MVC.Model.Repository
 
 
         }
-        //Add data Transaksi
+        //Add data Transaksi Barang Keluar
         public int Create_Barang_Keluar(Transaksi transaksi, int id_pengguna)
         {
             string strFormat = "yyyy-MM-dd";
@@ -151,6 +151,26 @@ namespace IMW_MVC.Model.Repository
                 cmd.Parameters.AddWithValue("@Tanggal_Transaksi", datenow);
                 cmd.Parameters.AddWithValue("@Jenis_Transaksi", transaksi.Jenis_Transaksi);
                 cmd.Parameters.AddWithValue("@Jumlah_Barang", transaksi.jumlah_barang);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+        //Add data Transaksi Barang Masuk
+
+        //Update Jumlah di Produk
+        public int UpdateJumlahProduk(Transaksi transaksi, int jumlah_produk)
+        {
+            int result = 0;
+            string sql = @"update produk set Jumlah_Barang = '"+jumlah_produk+"' where Product_ID = '"+transaksi.Product_ID+"'";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
                 try
                 {
                     result = cmd.ExecuteNonQuery();

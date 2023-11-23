@@ -70,7 +70,7 @@ namespace IMW_MVC.View
                 lvt.Items.Add(item);
             }
         }
-        private void OnCreateEventHandler(Transaksi trsansaksi)
+        private void OnCreateEventHandler(Transaksi transaksi)
         {
             lvt.Items.Clear();
             listTransaksi = controller.ReadAll();

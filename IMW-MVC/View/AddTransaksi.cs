@@ -30,6 +30,9 @@ namespace IMW_MVC.View
             InitializeComponent();
             controllerCombo = new TransaksiController();
             ComboBoxBarang();
+            ket_input.ReadOnly = true;
+            sisa_barang.ReadOnly = true;
+            harga.ReadOnly = true;
         }
         public AddTransaksi(string title, TransaksiController controller)
         : this()
@@ -66,21 +69,45 @@ namespace IMW_MVC.View
             transaksi.harga_barang = int.Parse(harga.Text);
             transaksi.jumlah_barang = int.Parse(jml_input.Text);
             transaksi.Jenis_Transaksi = "Barang Keluar";
+            int jumlah_barang = int.Parse(sisa_barang.Text) - transaksi.jumlah_barang;
             int result = 0;
             int id_pengguna = controller.PenggunaID(nama_pengguna);
             if (isNewData)
             {
                 result = controller.Create(transaksi, id_pengguna);
+                controller.UpdateJumlahProduk(transaksi, jumlah_barang);
                 if (result > 0)
                 {
                     OnCreate(transaksi);
+                    this.Close();
                 }
             }
         }
 
         private void barang_masuk_Click(object sender, EventArgs e)
         {
-
+            string item_list = select_barang.SelectedItem.ToString();
+            string new_item_list = new string(item_list.Where(char.IsDigit).ToArray());
+            int item_id = int.Parse(new_item_list);
+            if (isNewData) transaksi = new Transaksi();
+            transaksi.Product_ID = item_id;
+            transaksi.Deskripsi = ket_input.Text;
+            transaksi.harga_barang = int.Parse(harga.Text);
+            transaksi.jumlah_barang = int.Parse(jml_input.Text);
+            transaksi.Jenis_Transaksi = "Barang Masuk";
+            int jumlah_barang = int.Parse(sisa_barang.Text) - transaksi.jumlah_barang;
+            int result = 0;
+            int id_pengguna = controller.PenggunaID(nama_pengguna);
+            if (isNewData)
+            {
+                result = controller.Create(transaksi, id_pengguna);
+                controller.UpdateJumlahProduk(transaksi, jumlah_barang);
+                if (result > 0)
+                {
+                    OnCreate(transaksi);
+                    this.Close();
+                }
+            }
         }
 
         private void select_barang_SelectedIndexChanged(object sender, EventArgs e)
