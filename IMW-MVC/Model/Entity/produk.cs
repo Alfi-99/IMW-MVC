@@ -19,5 +19,11 @@ namespace IMW_MVC.Model.Entity
         public string Lokasi { get; set; }
         public int Jumlah_Barang { get; set; }
         public string Status { get; set;}
+
+        //untuk menyimpan field dari table lain
+        public string nama_penguna {  get; set; }
+        public string alamat_gudang { get; set; }
+        public string kapasitas_gudang { get; set; }
+        public string Nama_Gudang { get; set; }
     }
 }

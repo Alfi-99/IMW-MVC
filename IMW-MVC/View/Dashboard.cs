@@ -18,15 +18,21 @@ namespace IMW_MVC.View
         public static string nama_pengguna = Login.nama_pengguna;
         private List<Transaksi> listTransaksi = new List<Transaksi>();
         private TransaksiController controller;
+        private List<Produk> listProduk = new List<Produk>();
+        private ProdukController controller_produk;
 
         public Dashboard()
         {
             InitializeComponent();
             InisialisasiTransaksi();
+            InisialisasiProduk();
             controller = new TransaksiController();
+            controller_produk = new ProdukController();
             LoadDataTransaksi();
+            LoadDataProduk();
             user_nama.Text = Login.nama_pengguna;
         }
+        //Tab Transaksi
         private void InisialisasiTransaksi()
         {
             lvt.View = System.Windows.Forms.View.Details;
@@ -74,14 +80,6 @@ namespace IMW_MVC.View
         {
             lvt.Items.Clear();
             listTransaksi = controller.ReadAll();
-            if (listTransaksi != null)
-            {
-                MessageBox.Show("Hore");
-            }
-            else
-            {
-                MessageBox.Show("Kosong");
-            }
             foreach (var trs in listTransaksi)
             {
                 var noUrut = lvt.Items.Count + 1;
@@ -109,5 +107,51 @@ namespace IMW_MVC.View
         {
             LoadDataTransaksi();
         }
+        //End Tab Transaksi
+        //Tab Produk
+        private void InisialisasiProduk()
+        {
+            lvp.View = System.Windows.Forms.View.Details;
+            lvp.FullRowSelect = true;
+            lvp.GridLines = true;
+
+            lvp.Columns.Add("No", 50, HorizontalAlignment.Left);
+            lvp.Columns.Add("Nama Barang", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Tanggal Masuk", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Tanggal Keluar", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Deskripsi", 280, HorizontalAlignment.Left);
+            lvp.Columns.Add("Harga Barang", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Jumlah Barang", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Status", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Alamat", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Kapasitas", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Gudang", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Admin", 150, HorizontalAlignment.Left);
+        }
+        private void LoadDataProduk()
+        {
+            lvp.Items.Clear();
+            listProduk = controller_produk.ReadAll();
+            foreach (var trs in listProduk)
+            {
+                var noUrut = lvp.Items.Count + 1;
+                var item = new ListViewItem(noUrut.ToString());
+                item.SubItems.Add(trs.Nama_Barang);
+                item.SubItems.Add(trs.Tanggal_Masuk);
+                item.SubItems.Add(trs.Tanggal_Keluar);
+                item.SubItems.Add(trs.Deskripsi);
+                item.SubItems.Add(trs.Harga.ToString());
+                item.SubItems.Add(trs.Jumlah_Barang.ToString());
+                item.SubItems.Add(trs.Status);
+                item.SubItems.Add(trs.alamat_gudang);
+                item.SubItems.Add(trs.kapasitas_gudang);
+                item.SubItems.Add(trs.Nama_Gudang);
+                item.SubItems.Add(trs.nama_penguna);
+                lvp.Items.Add(item);
+            }
+        }
+        //End Tab Produk
+        //Tab Gudang
+        //End Tab Gudang
     }
 }

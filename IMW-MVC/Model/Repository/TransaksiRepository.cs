@@ -162,7 +162,6 @@ namespace IMW_MVC.Model.Repository
             }
             return result;
         }
-        //Add data Transaksi Barang Masuk
 
         //Update Jumlah di Produk
         public int UpdateJumlahProduk(Transaksi transaksi, int jumlah_produk)
@@ -182,5 +181,7 @@ namespace IMW_MVC.Model.Repository
             }
             return result;
         }
+        //Update Transaksi
+
     }
 }
