@@ -231,5 +231,23 @@ namespace IMW_MVC.Model.Repository
             }
             return result;
         }
+        //Delete Transaksi
+        public int DeleteTransaksi(Transaksi transaksi)
+        {
+            int result = 0;
+            string sql = @"delete from transaksi where Transaksi_ID = "+transaksi.Transaksi_ID+"";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Delete error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
     }
 }

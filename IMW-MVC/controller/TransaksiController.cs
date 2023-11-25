@@ -134,5 +134,15 @@ namespace IMW_MVC.Controller
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return result;
         }
+        public int DeleteTransaksi(Transaksi trs)
+        {
+            int result = 0;
+            using (DbContext context = new DbContext())
+            {
+                _repository = new TransaksiRepository(context);
+                result = _repository.DeleteTransaksi(trs);
+            }
+            return result;
+        }
     }
 }

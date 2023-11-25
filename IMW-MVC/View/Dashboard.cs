@@ -34,12 +34,14 @@ namespace IMW_MVC.View
             InisialisasiTransaksi();
             InisialisasiProduk();
             InisialisasiGudang();
+            InisialisasiUser();
             controller = new TransaksiController();
             controller_produk = new ProdukController();
             controller_gudang = new GudangController();
             LoadDataTransaksi();
             LoadDataProduk();
             LoadDataGudang();
+            LoadDataUser();
         }
         //Checking Status User
         private void user()
@@ -78,14 +80,6 @@ namespace IMW_MVC.View
         {
             lvt.Items.Clear();
             listTransaksi = controller.ReadAll();
-            if (listTransaksi != null)
-            {
-                MessageBox.Show("Hore");
-            }
-            else
-            {
-                MessageBox.Show("Kosong");
-            }
             foreach(var trs in listTransaksi) 
             {
                 var noUrut = lvt.Items.Count + 1;
@@ -134,6 +128,31 @@ namespace IMW_MVC.View
         private void btn_tampil_transaksi_Click(object sender, EventArgs e)
         {
             LoadDataTransaksi();
+        }
+        private void btn_delete_transaksi_Click(object sender, EventArgs e)
+        {
+            if (lvt.SelectedItems.Count > 0)
+            {
+                var konfirmasi = MessageBox.Show("Apakah data transaksi ingin dihapus ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (konfirmasi == DialogResult.Yes)
+                {
+                    Transaksi trs = listTransaksi[lvt.SelectedIndices[0]];
+                    var result = controller.DeleteTransaksi(trs);
+                    MessageBox.Show(result.ToString());
+                    if (result > 0)
+                    {
+                        LoadDataTransaksi();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data Tidak Berhasil Dihapus");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         //End Tab Transaksi
         //Tab Produk
@@ -218,5 +237,35 @@ namespace IMW_MVC.View
             LoadDataGudang();   
         }
         //End Tab Gudang
+        //Tab User
+        private void InisialisasiUser()
+        {
+            lvu.View = System.Windows.Forms.View.Details;
+            lvu.FullRowSelect = true;
+            lvu.GridLines = true;
+
+            lvu.Columns.Add("No", 50, HorizontalAlignment.Left);
+            lvu.Columns.Add("Pengguna ID", 150, HorizontalAlignment.Left);
+            lvu.Columns.Add("Nama", 150, HorizontalAlignment.Left);
+            lvu.Columns.Add("Status", 150, HorizontalAlignment.Left);
+            lvu.Columns.Add("Tanggal Buat", 280, HorizontalAlignment.Left);
+        }
+        private void LoadDataUser()
+        {
+            lvu.Items.Clear();
+            listPengguna = controller_pengguna.ReadAll();
+            foreach (var user in listPengguna)
+            {
+                var noUrut = lvu.Items.Count + 1;
+                var item = new ListViewItem(noUrut.ToString());
+                item.SubItems.Add(user.ID_pengguna.ToString());
+                item.SubItems.Add(user.nama_pengguna);
+                item.SubItems.Add(user.status);
+                item.SubItems.Add(user.tanggal_buat.ToString());
+                lvu.Items.Add(item);
+            }
+        }
+
+        //End Tab User
     }
 }

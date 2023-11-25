@@ -90,5 +90,15 @@ namespace IMW_MVC.Controller
             }
             return list;
         }
+        public List<Pengguna> ReadAll()
+        {
+            List<Pengguna> list = new List<Pengguna>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PenggunaRepository(context);
+                list = _repository.ReadAll();
+            }
+            return list;
+        }
     }
 }

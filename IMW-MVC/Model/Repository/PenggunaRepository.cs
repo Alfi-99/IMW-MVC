@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using IMW_MVC.Model.Entity;
 using IMW_MVC.Model.Context;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IMW_MVC.Model.Repository
 {
@@ -121,6 +122,35 @@ namespace IMW_MVC.Model.Repository
                             user.tanggal_buat = reader["tanggal_buat"].ToString();
                             list.Add(user);
     }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
+            }
+            return list;
+        }
+        public List<Pengguna> ReadAll()
+        {
+            List<Pengguna> list = new List<Pengguna>();
+            try
+            {
+                string sql = @"select * from pengguna";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Pengguna user = new Pengguna();
+                            user.ID_pengguna = int.Parse(reader["ID_pengguna"].ToString());
+                            user.nama_pengguna = reader["nama_pengguna"].ToString();
+                            user.status = reader["status"].ToString();
+                            user.katasandi = reader["katasandi"].ToString();
+                            user.tanggal_buat = reader["tanggal_buat"].ToString();
+                            list.Add(user);
+                        }
                     }
                 }
             }
