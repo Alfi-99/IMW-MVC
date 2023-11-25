@@ -154,6 +154,11 @@ namespace IMW_MVC.View
                 lvp.Items.Add(item);
             }
         }
+
+        private void btn_tampil_produk_Click(object sender, EventArgs e)
+        {
+            LoadDataProduk();
+        }
         //End Tab Produk
         //Tab Gudang
         private void InisialisasiGudang()
