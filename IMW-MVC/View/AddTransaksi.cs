@@ -17,6 +17,7 @@ namespace IMW_MVC.View
     {
         private List<Produk> listBarangCombobox = new List<Produk>();
         private List<Produk> listfillform = new List<Produk>();
+        private List<Produk> listbarangcomboboxupdate = new List<Produk>();
         private TransaksiController controllerCombo;
         private TransaksiController controller;
         public delegate void CreateUpdateEventHandler(Transaksi transaksi);
@@ -25,6 +26,9 @@ namespace IMW_MVC.View
         private Transaksi transaksi;
         private bool isNewData = true;
         public static string nama_pengguna = Dashboard.nama_pengguna;
+        public int transaksi_ID;
+        public int sisa_barang_untuk_update;
+        public int jumlah_barang_transaksi;
         public AddTransaksi()
         {
             InitializeComponent();
@@ -47,6 +51,21 @@ namespace IMW_MVC.View
             this.controller = controller;
             isNewData = false;
             transaksi = obj;
+            txtJudulEntry.Text = "Update Transaksi";
+            transaksi_ID = obj.Transaksi_ID;
+            jumlah_barang_transaksi = obj.jumlah_barang;
+            listbarangcomboboxupdate = controllerCombo.ReadProdukForComboBoxByNama(obj.Nama_barang);
+            jml_input.Text = obj.jumlah_barang.ToString();
+            foreach (var brg in listbarangcomboboxupdate)
+            {
+                string item_selected = brg.Product_ID + " - " + obj.Nama_barang.ToString();
+                select_barang.SelectedItem = item_selected;
+                ket_input.Text = brg.Deskripsi.ToString();
+                harga.Text = brg.Harga.ToString();
+                sisa_barang.Text = brg.Jumlah_Barang.ToString();
+
+            }
+
         }
         private void ComboBoxBarang()
         {
@@ -54,7 +73,7 @@ namespace IMW_MVC.View
             listBarangCombobox = controllerCombo.ReadProdukOnlyForComboBox();
             foreach (var prdk in listBarangCombobox)
             {
-                select_barang.Items.Add(prdk.Product_ID.ToString() + " - " + prdk.Nama_Barang.ToString());
+                select_barang.Items.Add(prdk.Product_ID.ToString() + " - " +prdk.Nama_Barang.ToString());
             }
         }
 
@@ -70,6 +89,7 @@ namespace IMW_MVC.View
             transaksi.jumlah_barang = int.Parse(jml_input.Text);
             transaksi.Jenis_Transaksi = "Barang Keluar";
             int jumlah_barang = int.Parse(sisa_barang.Text) - transaksi.jumlah_barang;
+            int jumlah_barang_update = int.Parse(sisa_barang.Text) + jumlah_barang_transaksi - transaksi.jumlah_barang;
             int result = 0;
             int id_pengguna = controller.PenggunaID(nama_pengguna);
             if (isNewData)
@@ -79,6 +99,16 @@ namespace IMW_MVC.View
                 if (result > 0)
                 {
                     OnCreate(transaksi);
+                    this.Close();
+                }
+            }
+            else
+            {
+                result = controller.UpdateTransaksi(transaksi, transaksi_ID);
+                controller.UpdateJumlahProduk(transaksi, jumlah_barang_update);
+                if(result > 0)
+                {
+                    OnUpdate(transaksi);
                     this.Close();
                 }
             }
@@ -95,7 +125,9 @@ namespace IMW_MVC.View
             transaksi.harga_barang = int.Parse(harga.Text);
             transaksi.jumlah_barang = int.Parse(jml_input.Text);
             transaksi.Jenis_Transaksi = "Barang Masuk";
+            listfillform = controllerCombo.ReadForFillForm(item_id);
             int jumlah_barang = int.Parse(sisa_barang.Text) - transaksi.jumlah_barang;
+            int jumlah_barang_update = int.Parse(sisa_barang.Text) + jumlah_barang_transaksi - transaksi.jumlah_barang;
             int result = 0;
             int id_pengguna = controller.PenggunaID(nama_pengguna);
             if (isNewData)
@@ -108,13 +140,24 @@ namespace IMW_MVC.View
                     this.Close();
                 }
             }
+            else
+            {
+                result = controller.UpdateTransaksi(transaksi, transaksi_ID);
+                controller.UpdateJumlahProduk(transaksi, jumlah_barang_update);
+                if (result > 0)
+                {
+                    OnUpdate(transaksi);
+                    this.Close();
+                }
+            }
         }
 
         private void select_barang_SelectedIndexChanged(object sender, EventArgs e)
         {
             string item_list = select_barang.SelectedItem.ToString();
             string new_item_list = new string(item_list.Where(char.IsDigit).ToArray());
-            int item_id = int.Parse(new_item_list);
+            int v = int.Parse(new_item_list);
+            int item_id = v;
             listfillform = controllerCombo.ReadForFillForm(item_id);
             foreach (var prdk in listfillform)
             {

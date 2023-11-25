@@ -64,6 +64,7 @@ namespace IMW_MVC.View
             lvt.GridLines = true;
 
             lvt.Columns.Add("No", 50, HorizontalAlignment.Left);
+            lvt.Columns.Add("ID Transaksi", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Nama Barang", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Tanggal Masuk", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Deskripsi", 290, HorizontalAlignment.Left);
@@ -89,6 +90,7 @@ namespace IMW_MVC.View
             {
                 var noUrut = lvt.Items.Count + 1;
                 var item = new ListViewItem(noUrut.ToString());
+                item.SubItems.Add(trs.Transaksi_ID.ToString());
                 item.SubItems.Add(trs.Nama_barang);
                 item.SubItems.Add(trs.Tanggal_Masuk);
                 item.SubItems.Add(trs.Deskripsi);
@@ -102,27 +104,31 @@ namespace IMW_MVC.View
         }
         private void OnCreateEventHandler(Transaksi transaksi)
         {
-            lvt.Items.Clear();
-            listTransaksi = controller.ReadAll();
-            foreach (var trs in listTransaksi)
-            {
-                var noUrut = lvt.Items.Count + 1;
-                var item = new ListViewItem(noUrut.ToString());
-                item.SubItems.Add(trs.Nama_barang);
-                item.SubItems.Add(trs.Tanggal_Masuk);
-                item.SubItems.Add(trs.Deskripsi);
-                item.SubItems.Add(trs.jumlah_barang.ToString());
-                item.SubItems.Add(trs.harga_barang.ToString());
-                item.SubItems.Add(trs.Gudang);
-                item.SubItems.Add(trs.Alamat);
-                item.SubItems.Add(trs.User);
-                lvt.Items.Add(item);
-            }
+            LoadDataTransaksi();
+        }
+        private void OnUpdateEventHandler(Transaksi transaksi)
+        {
+            LoadDataTransaksi();
         }
         private void btn_tambah_transaksi_Click(object sender, EventArgs e)
         {
             AddTransaksi addTransaksi = new AddTransaksi("Tambah Data Transaksi", controller);
+            addTransaksi.OnUpdate += OnCreateEventHandler;
             addTransaksi.ShowDialog();
+        }
+        private void btn_update_transaksi_Click(object sender, EventArgs e)
+        {
+            if(lvt.SelectedItems.Count > 0)
+            {
+                Transaksi trs = listTransaksi[lvt.SelectedIndices[0]];
+                AddTransaksi addTransaksi = new AddTransaksi("Update Data Transaksi", trs,controller);
+                addTransaksi.OnUpdate += OnUpdateEventHandler;
+                addTransaksi.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btn_tampil_transaksi_Click(object sender, EventArgs e)

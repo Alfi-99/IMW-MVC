@@ -100,6 +100,7 @@
             this.btn_update_transaksi.TabIndex = 2;
             this.btn_update_transaksi.Text = "Update";
             this.btn_update_transaksi.UseVisualStyleBackColor = true;
+            this.btn_update_transaksi.Click += new System.EventHandler(this.btn_update_transaksi_Click);
             // 
             // btn_tampil_transaksi
             // 

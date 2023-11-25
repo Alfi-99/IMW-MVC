@@ -25,7 +25,7 @@ namespace IMW_MVC.Model.Repository
             List<Transaksi> list = new List<Transaksi>();
             try
             {
-                string sql = @"select transaksi.Tanggal_Transaksi, transaksi.Jenis_Transaksi, transaksi.Jumlah_Barang,  produk.Nama_Barang, produk.Deskripsi, produk.Harga, gudang.Nama_Gudang, gudang.Alamat, pengguna.nama_pengguna FROM transaksi JOIN produk ON transaksi.Product_ID = produk.Product_ID JOIN gudang ON produk.Gudang_ID = gudang.Gudang_ID JOIN pengguna ON transaksi.ID_pengguna = pengguna.ID_pengguna";
+                string sql = @"select transaksi.Transaksi_ID, transaksi.Tanggal_Transaksi, transaksi.Jenis_Transaksi, transaksi.Jumlah_Barang,  produk.Nama_Barang, produk.Deskripsi, produk.Harga, gudang.Nama_Gudang, gudang.Alamat, pengguna.nama_pengguna FROM transaksi JOIN produk ON transaksi.Product_ID = produk.Product_ID JOIN gudang ON produk.Gudang_ID = gudang.Gudang_ID JOIN pengguna ON transaksi.ID_pengguna = pengguna.ID_pengguna";
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -33,6 +33,7 @@ namespace IMW_MVC.Model.Repository
                         while(reader.Read()) 
                         {
                             Transaksi trs = new Transaksi();
+                            trs.Transaksi_ID = int.Parse(reader["Transaksi_ID"].ToString());
                             trs.Nama_barang = reader["Nama_Barang"].ToString();
                             trs.Tanggal_Masuk = reader["Tanggal_Transaksi"].ToString();
                             trs.Deskripsi = reader["Deskripsi"].ToString();
@@ -182,6 +183,53 @@ namespace IMW_MVC.Model.Repository
             return result;
         }
         //Update Transaksi
-
+        //Ambil Data Berdasarkan Nama Barang
+        public List<Produk> ReadProdukForComboBoxByNama(string namabarang)
+        {
+            List<Produk> list = new List<Produk>();
+            try
+            {
+                string sql = @"select * from produk where Nama_Barang = '"+namabarang+"'";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Produk brg = new Produk();
+                            brg.Product_ID = int.Parse(reader["Product_ID"].ToString());
+                            brg.Nama_Barang = reader["Nama_Barang"].ToString();
+                            brg.Deskripsi = reader["Deskripsi"].ToString();
+                            brg.Jumlah_Barang = int.Parse(reader["Jumlah_barang"].ToString());
+                            brg.Harga = int.Parse(reader["Harga"].ToString());
+                            list.Add(brg);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
+            }
+            return list;
+        }
+        //Update Transaksi
+        public int UpdateTransaksi(Transaksi transaksi, int transaksiid)
+        {
+            int result = 0;
+            string sql = @"update transaksi set Jumlah_Barang = '" + transaksi.jumlah_barang + "', Jenis_Transaksi = '"+transaksi.Jenis_Transaksi+"' where Transaksi_ID = " + transaksiid + "";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Update error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
     }
 }

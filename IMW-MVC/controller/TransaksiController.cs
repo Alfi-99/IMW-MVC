@@ -94,6 +94,45 @@ namespace IMW_MVC.Controller
             }
             return result; 
         }
-
+        public List<Produk> ReadProdukForComboBoxByNama(string namabarang)
+        {
+            List<Produk> list = new List<Produk>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new TransaksiRepository(context);
+                list = _repository.ReadProdukForComboBoxByNama(namabarang);
+            }
+            return list;
+        }
+        public int UpdateTransaksi(Transaksi transaksi, int transaksi_id)
+        {
+            int result = 0;
+            if (string.IsNullOrEmpty(transaksi.Product_ID.ToString()))
+            {
+                MessageBox.Show("Product harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(transaksi.jumlah_barang.ToString()))
+            {
+                MessageBox.Show("Jumlah harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            using (DbContext context = new DbContext())
+            {
+                _repository = new TransaksiRepository(context);
+                result = _repository.UpdateTransaksi(transaksi, transaksi_id);
+            }
+            if (result > 0)
+            {
+                MessageBox.Show("Data Transaksi berhasil diupdate !", "Informasi",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Data Transaksi gagal diupdate !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return result;
+        }
     }
 }
