@@ -79,5 +79,16 @@ namespace IMW_MVC.Controller
 
             return valid;
         }
+
+        public List<Pengguna> ReadUserByName(string username)
+        {
+            List<Pengguna> list = new List<Pengguna>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PenggunaRepository(context);
+                list = _repository.ReadUserByName(username);
+            }
+            return list;
+        }
     }
 }

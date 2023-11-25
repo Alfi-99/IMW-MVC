@@ -45,6 +45,7 @@
             this.btn_tampil_produk = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.status_user = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -57,11 +58,11 @@
             this.tabControl1.Controls.Add(this.TabProduk);
             this.tabControl1.Controls.Add(this.TabGudang);
             this.tabControl1.Controls.Add(this.TabUser);
-            this.tabControl1.Location = new System.Drawing.Point(508, 91);
+            this.tabControl1.Location = new System.Drawing.Point(39, 91);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1422, 743);
+            this.tabControl1.Size = new System.Drawing.Size(1891, 743);
             this.tabControl1.TabIndex = 0;
             // 
             // TabTransaksi
@@ -75,7 +76,7 @@
             this.TabTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabTransaksi.Name = "TabTransaksi";
             this.TabTransaksi.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabTransaksi.Size = new System.Drawing.Size(1414, 714);
+            this.TabTransaksi.Size = new System.Drawing.Size(1883, 714);
             this.TabTransaksi.TabIndex = 0;
             this.TabTransaksi.Text = "Transaksi";
             this.TabTransaksi.UseVisualStyleBackColor = true;
@@ -143,7 +144,7 @@
             this.TabProduk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabProduk.Name = "TabProduk";
             this.TabProduk.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabProduk.Size = new System.Drawing.Size(1414, 714);
+            this.TabProduk.Size = new System.Drawing.Size(1883, 714);
             this.TabProduk.TabIndex = 1;
             this.TabProduk.Text = "Produk";
             this.TabProduk.UseVisualStyleBackColor = true;
@@ -164,7 +165,7 @@
             this.TabGudang.Location = new System.Drawing.Point(4, 25);
             this.TabGudang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabGudang.Name = "TabGudang";
-            this.TabGudang.Size = new System.Drawing.Size(1414, 714);
+            this.TabGudang.Size = new System.Drawing.Size(1883, 714);
             this.TabGudang.TabIndex = 2;
             this.TabGudang.Text = "Gudang";
             this.TabGudang.UseVisualStyleBackColor = true;
@@ -192,7 +193,7 @@
             // 
             this.TabUser.Location = new System.Drawing.Point(4, 25);
             this.TabUser.Name = "TabUser";
-            this.TabUser.Size = new System.Drawing.Size(1413, 714);
+            this.TabUser.Size = new System.Drawing.Size(1883, 714);
             this.TabUser.TabIndex = 3;
             this.TabUser.Text = "User";
             this.TabUser.UseVisualStyleBackColor = true;
@@ -234,11 +235,22 @@
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // status_user
+            // 
+            this.status_user.AutoSize = true;
+            this.status_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status_user.Location = new System.Drawing.Point(1616, 60);
+            this.status_user.Name = "status_user";
+            this.status_user.Size = new System.Drawing.Size(212, 29);
+            this.status_user.TabIndex = 1;
+            this.status_user.Text = "Status_Karyawan";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 832);
+            this.Controls.Add(this.status_user);
             this.Controls.Add(this.user_nama);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -272,5 +284,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_tampil_produk;
         private System.Windows.Forms.Button btn_tambah_produk;
+        private System.Windows.Forms.Label status_user;
     }
 }

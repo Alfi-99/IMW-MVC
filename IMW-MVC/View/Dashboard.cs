@@ -22,21 +22,39 @@ namespace IMW_MVC.View
         private ProdukController controller_produk;
         private List<Gudang> listGudang = new List<Gudang>();
         private GudangController controller_gudang;
+        private List<Pengguna> listPengguna = new List<Pengguna>();
+        private PenggunaController controller_pengguna;
 
         public Dashboard()
         {
             InitializeComponent();
+            user_nama.Text = Login.nama_pengguna;
+            controller_pengguna = new PenggunaController();
+            user();
             InisialisasiTransaksi();
             InisialisasiProduk();
             InisialisasiGudang();
             controller = new TransaksiController();
             controller_produk = new ProdukController();
             controller_gudang = new GudangController();
-
             LoadDataTransaksi();
             LoadDataProduk();
             LoadDataGudang();
-            user_nama.Text = Login.nama_pengguna;
+        }
+        //Checking Status User
+        private void user()
+        {
+            listPengguna = controller_pengguna.ReadUserByName(user_nama.Text.ToString());
+            foreach(var user in listPengguna)
+            {
+                status_user.Text = user.status;
+                if (user.status == "User")
+                {
+                    tabControl1.TabPages.Remove(TabProduk);
+                    tabControl1.TabPages.Remove(TabGudang);
+                    tabControl1.TabPages.Remove(TabUser);
+                }
+            }
         }
         //Tab Transaksi
         private void InisialisasiTransaksi()

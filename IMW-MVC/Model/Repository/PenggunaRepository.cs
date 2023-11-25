@@ -100,5 +100,35 @@ namespace IMW_MVC.Model.Repository
             }
             return valid;
         }
+        //Mengambil User By Name
+        public List<Pengguna> ReadUserByName(string username)
+        {
+            List<Pengguna> list = new List<Pengguna>();
+            try
+            {
+                string sql = @"select * from pengguna where nama_pengguna = '"+username+"'";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Pengguna user = new Pengguna();
+                            user.ID_pengguna = int.Parse(reader["ID_pengguna"].ToString());
+                            user.nama_pengguna = reader["nama_pengguna"].ToString();
+                            user.status = reader["status"].ToString();
+                            user.katasandi = reader["katasandi"].ToString();
+                            user.tanggal_buat = reader["tanggal_buat"].ToString();
+                            list.Add(user);
+    }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
+            }
+            return list;
+        }
     }
 }
