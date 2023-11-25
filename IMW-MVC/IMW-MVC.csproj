@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\GudangController.cs" />
     <Compile Include="Controller\PenggunaController.cs" />
     <Compile Include="Controller\ProdukController.cs" />
     <Compile Include="Controller\TransaksiController.cs" />

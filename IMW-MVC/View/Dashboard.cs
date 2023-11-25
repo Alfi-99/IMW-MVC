@@ -20,16 +20,22 @@ namespace IMW_MVC.View
         private TransaksiController controller;
         private List<Produk> listProduk = new List<Produk>();
         private ProdukController controller_produk;
+        private List<Gudang> listGudang = new List<Gudang>();
+        private GudangController controller_gudang;
 
         public Dashboard()
         {
             InitializeComponent();
             InisialisasiTransaksi();
             InisialisasiProduk();
+            InisialisasiGudang();
             controller = new TransaksiController();
             controller_produk = new ProdukController();
+            controller_gudang = new GudangController();
+
             LoadDataTransaksi();
             LoadDataProduk();
+            LoadDataGudang();
             user_nama.Text = Login.nama_pengguna;
         }
         //Tab Transaksi
@@ -152,6 +158,33 @@ namespace IMW_MVC.View
         }
         //End Tab Produk
         //Tab Gudang
+        private void InisialisasiGudang()
+        {
+            lvg.View = System.Windows.Forms.View.Details;
+            lvg.FullRowSelect = true;
+            lvg.GridLines = true;
+
+            lvg.Columns.Add("No", 50, HorizontalAlignment.Left);
+            lvg.Columns.Add("Gudang ID", 150, HorizontalAlignment.Left);
+            lvg.Columns.Add("Nama Gudang", 150, HorizontalAlignment.Left);
+            lvg.Columns.Add("Alamat", 150, HorizontalAlignment.Left);
+            lvg.Columns.Add("Kapasitas", 280, HorizontalAlignment.Left);
+        }
+        private void LoadDataGudang()
+        {
+            lvg.Items.Clear();
+            listGudang = controller_gudang.ReadAll();
+            foreach (var trs in listGudang)
+            {
+                var noUrut = lvp.Items.Count + 1;
+                var item = new ListViewItem(noUrut.ToString());
+                item.SubItems.Add(trs.Gudang_ID.ToString());
+                item.SubItems.Add(trs.Nama_Gudang);
+                item.SubItems.Add(trs.Alamat);
+                item.SubItems.Add(trs.Kapasitas.ToString());
+                lvg.Items.Add(item);
+            }
+        }
         //End Tab Gudang
     }
 }
