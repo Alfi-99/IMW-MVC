@@ -40,6 +40,9 @@
             this.TabGudang = new System.Windows.Forms.TabPage();
             this.user_nama = new System.Windows.Forms.Label();
             this.lvg = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_tampil_gudang = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -55,7 +58,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1912, 745);
+            this.tabControl1.Size = new System.Drawing.Size(1900, 570);
             this.tabControl1.TabIndex = 0;
             // 
             // TabTransaksi
@@ -69,7 +72,7 @@
             this.TabTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabTransaksi.Name = "TabTransaksi";
             this.TabTransaksi.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabTransaksi.Size = new System.Drawing.Size(1904, 716);
+            this.TabTransaksi.Size = new System.Drawing.Size(1892, 541);
             this.TabTransaksi.TabIndex = 0;
             this.TabTransaksi.Text = "Transaksi";
             this.TabTransaksi.UseVisualStyleBackColor = true;
@@ -133,7 +136,7 @@
             this.TabProduk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabProduk.Name = "TabProduk";
             this.TabProduk.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabProduk.Size = new System.Drawing.Size(1904, 716);
+            this.TabProduk.Size = new System.Drawing.Size(1892, 541);
             this.TabProduk.TabIndex = 1;
             this.TabProduk.Text = "Produk";
             this.TabProduk.UseVisualStyleBackColor = true;
@@ -144,7 +147,7 @@
             this.lvp.Location = new System.Drawing.Point(0, 0);
             this.lvp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvp.Name = "lvp";
-            this.lvp.Size = new System.Drawing.Size(1905, 586);
+            this.lvp.Size = new System.Drawing.Size(1900, 570);
             this.lvp.TabIndex = 0;
             this.lvp.UseCompatibleStateImageBehavior = false;
             // 
@@ -154,7 +157,7 @@
             this.TabGudang.Location = new System.Drawing.Point(4, 25);
             this.TabGudang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabGudang.Name = "TabGudang";
-            this.TabGudang.Size = new System.Drawing.Size(1904, 716);
+            this.TabGudang.Size = new System.Drawing.Size(1892, 541);
             this.TabGudang.TabIndex = 2;
             this.TabGudang.Text = "Gudang";
             this.TabGudang.UseVisualStyleBackColor = true;
@@ -178,11 +181,42 @@
             this.lvg.TabIndex = 0;
             this.lvg.UseCompatibleStateImageBehavior = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(307, 680);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(167, 680);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btn_tampil_gudang
+            // 
+            this.btn_tampil_gudang.Location = new System.Drawing.Point(36, 680);
+            this.btn_tampil_gudang.Name = "btn_tampil_gudang";
+            this.btn_tampil_gudang.Size = new System.Drawing.Size(75, 23);
+            this.btn_tampil_gudang.TabIndex = 3;
+            this.btn_tampil_gudang.Text = "Tampilkan";
+            this.btn_tampil_gudang.UseVisualStyleBackColor = true;
+            this.btn_tampil_gudang.Click += new System.EventHandler(this.btn_tampil_gudang_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 832);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_tampil_gudang);
             this.Controls.Add(this.user_nama);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -211,5 +245,8 @@
         private System.Windows.Forms.Button btn_update_transaksi;
         private System.Windows.Forms.ListView lvp;
         private System.Windows.Forms.ListView lvg;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_tampil_gudang;
     }
 }

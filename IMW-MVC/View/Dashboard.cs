@@ -104,8 +104,6 @@ namespace IMW_MVC.View
         private void btn_tambah_transaksi_Click(object sender, EventArgs e)
         {
             AddTransaksi addTransaksi = new AddTransaksi("Tambah Data Transaksi", controller);
-            addTransaksi.OnCreate += OnCreateEventHandler;
-            // tampilkan form entry mahasiswa
             addTransaksi.ShowDialog();
         }
 
@@ -184,6 +182,11 @@ namespace IMW_MVC.View
                 item.SubItems.Add(trs.Kapasitas.ToString());
                 lvg.Items.Add(item);
             }
+        }
+
+        private void btn_tampil_gudang_Click(object sender, EventArgs e)
+        {
+            LoadDataGudang();   
         }
         //End Tab Gudang
     }
