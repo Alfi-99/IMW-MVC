@@ -138,7 +138,6 @@ namespace IMW_MVC.View
                 {
                     Transaksi trs = listTransaksi[lvt.SelectedIndices[0]];
                     var result = controller.DeleteTransaksi(trs);
-                    MessageBox.Show(result.ToString());
                     if (result > 0)
                     {
                         LoadDataTransaksi();
@@ -174,6 +173,7 @@ namespace IMW_MVC.View
             lvp.Columns.Add("Kapasitas", 150, HorizontalAlignment.Left);
             lvp.Columns.Add("Gudang", 150, HorizontalAlignment.Left);
             lvp.Columns.Add("Admin", 150, HorizontalAlignment.Left);
+            lvp.Columns.Add("Product_ID", 0, HorizontalAlignment.Left);
         }
         private void LoadDataProduk()
         {
@@ -194,6 +194,7 @@ namespace IMW_MVC.View
                 item.SubItems.Add(trs.kapasitas_gudang);
                 item.SubItems.Add(trs.Nama_Gudang);
                 item.SubItems.Add(trs.nama_penguna);
+                item.SubItems.Add(trs.Product_ID.ToString());
                 lvp.Items.Add(item);
             }
         }
@@ -206,11 +207,53 @@ namespace IMW_MVC.View
         {
             LoadDataProduk();
         }
+        private void OnUpdateProdukEventHandler(Produk produk)
+        {
+            LoadDataProduk();
+        }
         private void btn_tambah_produk_Click(object sender, EventArgs e)
         {
             AddProduk AddProduk = new AddProduk("Tambah Data Produk", controller_produk);
             AddProduk.OnCreate += OnCreateProdukEventHandler;
             AddProduk.ShowDialog();
+        }
+        private void btn_update_produk_Click(object sender, EventArgs e)
+        {
+            if (lvp.SelectedItems.Count > 0)
+            {
+                Produk produk = listProduk[lvp.SelectedIndices[0]];
+                AddProduk AddProduk = new AddProduk("Update Data Produk", produk, controller_produk);
+                AddProduk.OnUpdate += OnUpdateProdukEventHandler;
+                AddProduk.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+        private void btn_delete_produk_Click(object sender, EventArgs e)
+        {
+            if (lvp.SelectedItems.Count > 0)
+            {
+                var konfirmasi = MessageBox.Show("Apakah data produk ingin dihapus ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (konfirmasi == DialogResult.Yes)
+                {
+                    Produk produk = listProduk[lvp.SelectedIndices[0]];
+                    var result = controller_produk.DeleteProduk(produk);
+                    if (result > 0)
+                    {
+                        LoadDataProduk();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data Tidak Berhasil Dihapus");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         //End Tab Produk
         //Tab Gudang
@@ -276,7 +319,6 @@ namespace IMW_MVC.View
                 lvu.Items.Add(item);
             }
         }
-
         //End Tab User
     }
 }

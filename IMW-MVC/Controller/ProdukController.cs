@@ -92,7 +92,7 @@ namespace IMW_MVC.Controller
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return result;
         }
-        public int Update(Produk produk, int id_pengguna)
+        public int Update(Produk produk, int product_id)
         {
             int result = 0;
             if (string.IsNullOrEmpty(produk.Gudang_ID.ToString()))
@@ -128,7 +128,7 @@ namespace IMW_MVC.Controller
             using (DbContext context = new DbContext())
             {
                 _repository = new ProdukRepository(context);
-                result = _repository.Update(produk, id_pengguna);
+                result = _repository.Update(produk, product_id);
             }
             if (result > 0)
             {
@@ -149,6 +149,26 @@ namespace IMW_MVC.Controller
                 list = _repository.GetProdukListJumlah(gudang_id);
             }
             return list;
+        }
+        public List<Gudang> ReadGudangBasedOnGudangID(string nama_gudang)
+        {
+            List<Gudang> list = new List<Gudang>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProdukRepository(context);
+                list = _repository.ReadGudangBasedOnGudangID(nama_gudang);
+            }
+            return list;
+        }
+        public int DeleteProduk(Produk produk)
+        {
+            int result = 0;
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProdukRepository(context);
+                result = _repository.DeleteProduk(produk);
+            }
+            return result;
         }
     }
 }

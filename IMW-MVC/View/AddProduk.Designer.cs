@@ -45,7 +45,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.input_harga = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -216,21 +215,11 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "Harga";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "label7";
-            // 
             // AddProduk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 592);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.input_harga);
             this.Controls.Add(this.label4);
@@ -274,6 +263,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox input_harga;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
     }
 }

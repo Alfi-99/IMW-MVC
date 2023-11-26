@@ -23,7 +23,7 @@ namespace IMW_MVC.Model.Repository
             List<Produk> list = new List<Produk>();
             try
             {
-                string sql = @"select produk.Nama_barang, produk.Tanggal_Masuk, produk.Deskripsi, produk.Harga, produk.Jumlah_Barang, produk.status, gudang.Alamat, gudang.Kapasitas, gudang.Nama_Gudang, pengguna.nama_pengguna from produk join gudang on produk.Gudang_ID = gudang.Gudang_ID join pengguna on produk.ID_pengguna = pengguna.ID_pengguna";
+                string sql = @"select produk.Product_ID, produk.Nama_barang, produk.Tanggal_Masuk, produk.Deskripsi, produk.Harga, produk.Jumlah_Barang, produk.status, gudang.Alamat, gudang.Kapasitas, gudang.Nama_Gudang, pengguna.nama_pengguna from produk join gudang on produk.Gudang_ID = gudang.Gudang_ID join pengguna on produk.ID_pengguna = pengguna.ID_pengguna";
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -32,6 +32,7 @@ namespace IMW_MVC.Model.Repository
                         {
                             Produk prd = new Produk();
                             prd.Nama_Barang = reader["Nama_barang"].ToString();
+                            prd.Product_ID = int.Parse(reader["Product_ID"].ToString());
                             prd.Tanggal_Masuk = reader["Tanggal_Masuk"].ToString();
                             prd.Deskripsi = reader["Deskripsi"].ToString();
                             prd.Harga = int.Parse(reader["Harga"].ToString());
@@ -131,9 +132,29 @@ namespace IMW_MVC.Model.Repository
             }
             return result;
         }
-        public int Update(Produk produk, int id_pengguna)
+        public int Update(Produk produk, int product_id)
         {
             int result = 0;
+            string sql = @"update produk set Gudang_ID = @Gudang_ID, Nama_Barang = @Nama_Barang, Deskripsi = @Deskripsi, Harga = @Harga, Lokasi=@Lokasi, Jumlah_Barang = @Jumlah_Barang where Product_ID = @product_id";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@Gudang_ID", produk.Gudang_ID);
+                cmd.Parameters.AddWithValue("@Nama_Barang", produk.Nama_Barang);
+                cmd.Parameters.AddWithValue("@Deskripsi", produk.Deskripsi);
+                cmd.Parameters.AddWithValue("@Harga", produk.Harga);
+                cmd.Parameters.AddWithValue("@Lokasi", produk.Lokasi);
+                cmd.Parameters.AddWithValue("@Jumlah_Barang", produk.Jumlah_Barang);
+                cmd.Parameters.AddWithValue("@product_id", product_id);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+
             return result;
         }
         public List<Produk> GetProdukListJumlah(int gudang_id) 
@@ -161,6 +182,51 @@ namespace IMW_MVC.Model.Repository
                 System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
             }
             return list;
+        }
+        public List<Gudang> ReadGudangBasedOnGudangID(string nama_gudang)
+        {
+            List<Gudang> list = new List<Gudang>();
+            try
+            {
+                string sql = @"select * from gudang where Nama_Gudang = '" + nama_gudang + "'";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Gudang prd = new Gudang();
+                            prd.Gudang_ID = int.Parse(reader["Gudang_ID"].ToString());
+                            prd.Nama_Gudang = reader["Nama_Gudang"].ToString();
+                            prd.Alamat = reader["Alamat"].ToString();
+                            prd.Kapasitas = int.Parse(reader["Kapasitas"].ToString());
+                            list.Add(prd);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadGudangBasedOnGudangID Eror nih: {0}", ex.Message);
+            }
+            return list;
+        }
+        public int DeleteProduk(Produk produk)
+        {
+            int result = 0;
+            string sql = @"delete from produk where Product_ID = " + produk.Product_ID + "";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Delete error: {0}", ex.Message);
+                }
+            }
+            return result;
         }
     }
 }

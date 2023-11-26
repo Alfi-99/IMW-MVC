@@ -36,8 +36,8 @@
             this.btn_tampil_transaksi = new System.Windows.Forms.Button();
             this.btn_tambah_transaksi = new System.Windows.Forms.Button();
             this.TabProduk = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_update_produk = new System.Windows.Forms.Button();
+            this.btn_delete_produk = new System.Windows.Forms.Button();
             this.btn_tampil_produk = new System.Windows.Forms.Button();
             this.btn_tambah_produk = new System.Windows.Forms.Button();
             this.lvp = new System.Windows.Forms.ListView();
@@ -137,8 +137,8 @@
             // 
             // TabProduk
             // 
-            this.TabProduk.Controls.Add(this.button2);
-            this.TabProduk.Controls.Add(this.button1);
+            this.TabProduk.Controls.Add(this.btn_update_produk);
+            this.TabProduk.Controls.Add(this.btn_delete_produk);
             this.TabProduk.Controls.Add(this.btn_tampil_produk);
             this.TabProduk.Controls.Add(this.btn_tambah_produk);
             this.TabProduk.Controls.Add(this.lvp);
@@ -151,25 +151,27 @@
             this.TabProduk.Text = "Produk";
             this.TabProduk.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_update_produk
             // 
-            this.button2.Location = new System.Drawing.Point(272, 498);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_update_produk.Location = new System.Drawing.Point(272, 498);
+            this.btn_update_produk.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_update_produk.Name = "btn_update_produk";
+            this.btn_update_produk.Size = new System.Drawing.Size(56, 19);
+            this.btn_update_produk.TabIndex = 4;
+            this.btn_update_produk.Text = "Update";
+            this.btn_update_produk.UseVisualStyleBackColor = true;
+            this.btn_update_produk.Click += new System.EventHandler(this.btn_update_produk_Click);
             // 
-            // button1
+            // btn_delete_produk
             // 
-            this.button1.Location = new System.Drawing.Point(387, 498);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_delete_produk.Location = new System.Drawing.Point(387, 498);
+            this.btn_delete_produk.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_delete_produk.Name = "btn_delete_produk";
+            this.btn_delete_produk.Size = new System.Drawing.Size(56, 19);
+            this.btn_delete_produk.TabIndex = 3;
+            this.btn_delete_produk.Text = "Delete";
+            this.btn_delete_produk.UseVisualStyleBackColor = true;
+            this.btn_delete_produk.Click += new System.EventHandler(this.btn_delete_produk_Click);
             // 
             // btn_tampil_produk
             // 
@@ -300,8 +302,8 @@
         private System.Windows.Forms.ListView lvp;
         private System.Windows.Forms.ListView lvg;
         private System.Windows.Forms.TabPage TabUser;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_update_produk;
+        private System.Windows.Forms.Button btn_delete_produk;
         private System.Windows.Forms.Button btn_tampil_produk;
         private System.Windows.Forms.Button btn_tambah_produk;
         private System.Windows.Forms.Label status_user;
