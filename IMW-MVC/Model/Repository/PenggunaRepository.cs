@@ -121,7 +121,7 @@ namespace IMW_MVC.Model.Repository
                             user.katasandi = reader["katasandi"].ToString();
                             user.tanggal_buat = reader["tanggal_buat"].ToString();
                             list.Add(user);
-    }
+                        }
                     }
                 }
             }
@@ -130,6 +130,35 @@ namespace IMW_MVC.Model.Repository
                 System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
             }
             return list;
+        }
+        //validasi Username
+        public bool CheckUsername(string username)
+        {
+            bool valid = false;
+            try
+            {
+                string sql = @"select nama_pengguna, katasandi from pengguna where nama_pengguna = @nama_pengguna";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@nama_pengguna", username);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            valid = true;
+                        }
+                        else
+                        {
+                            valid = false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("Get User and Pass Error: {0}", ex.Message);
+            }
+            return valid;
         }
         public List<Pengguna> ReadAll()
         {

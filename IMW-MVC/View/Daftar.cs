@@ -25,18 +25,28 @@ namespace IMW_MVC.View
 
         private void btn_daftar_Click(object sender, EventArgs e)
         {
+            bool checkuser = false;
             Pengguna user = new Pengguna();
             if(txt_pass_daftar.Text == txt_retype_daftar.Text)
             {
                 user.nama_pengguna = txt_user_daftar.Text;
                 user.katasandi = txt_pass_daftar.Text;
-                int result = controller.Create(user);
-                if(result == 1) 
-                { 
-                    this.Hide();
-                    Login login = new Login();
-                    login.ShowDialog();
+                checkuser = controller.CheckUsername(user.nama_pengguna);
+                if(checkuser == false)
+                {
+                    int result = controller.Create(user);
+                    if (result == 1)
+                    {
+                        this.Hide();
+                        Login login = new Login();
+                        login.ShowDialog();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Maaf User dengan Nama berikut sudah ada");
+                }
+
             }
             else
             {

@@ -90,6 +90,17 @@ namespace IMW_MVC.Controller
             }
             return list;
         }
+        public bool CheckUsername(string nama_pengguna)
+        {
+            bool valid = false;
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PenggunaRepository(context);
+                valid = _repository.CheckUsername(nama_pengguna);
+            }
+
+            return valid;
+        }
         public List<Pengguna> ReadAll()
         {
             List<Pengguna> list = new List<Pengguna>();
