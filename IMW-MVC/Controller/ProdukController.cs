@@ -140,5 +140,15 @@ namespace IMW_MVC.Controller
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return result;
         }
+        public List<Produk> GetProdukListJumlah(int gudang_id)
+        {
+            List<Produk> list = new List<Produk>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProdukRepository(context);
+                list = _repository.GetProdukListJumlah(gudang_id);
+            }
+            return list;
+        }
     }
 }

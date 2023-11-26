@@ -136,5 +136,31 @@ namespace IMW_MVC.Model.Repository
             int result = 0;
             return result;
         }
+        public List<Produk> GetProdukListJumlah(int gudang_id) 
+        {
+            List<Produk> list = new List<Produk>();
+            try
+            {
+                string sql = @"select Gudang_ID, Jumlah_Barang from produk WHERE Gudang_ID = "+gudang_id+"";
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Produk prd = new Produk();
+                            prd.Gudang_ID = int.Parse(reader["Gudang_ID"].ToString());
+                            prd.Jumlah_Barang = int.Parse(reader["Jumlah_Barang"].ToString());
+                            list.Add(prd);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
+            }
+            return list;
+        }
     }
 }

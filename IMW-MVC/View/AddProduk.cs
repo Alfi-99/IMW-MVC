@@ -24,9 +24,11 @@ namespace IMW_MVC.View
         private Produk produk;
         private List<Gudang> listbarangcombobox = new List<Gudang>();
         private List<Gudang> listfillform = new List<Gudang>();
+        private List<Produk> listjumlahprodukbygudang = new List<Produk>();
         private bool isNewData = true;
         public int Produk_ID;
         public static string nama_pengguna = Dashboard.nama_pengguna;
+        //public int jumlah_barang_suatu_gudang;
         public AddProduk()
         {
             InitializeComponent();
@@ -68,7 +70,6 @@ namespace IMW_MVC.View
         {
             string strFormat = "yyyy-MM-dd H:m:s";
             string datenow = DateTime.Now.ToString(strFormat);
-            MessageBox.Show(datenow);
             string item_list = select_gudang.SelectedItem.ToString();
             string new_item_list = new string(item_list.Where(char.IsDigit).ToArray());
             int gudang_id = int.Parse(new_item_list);
@@ -83,14 +84,27 @@ namespace IMW_MVC.View
             produk.Status = "Ada";
             int result = 0;
             int id_pengguna = controller_transaksi.PenggunaID(nama_pengguna);
-            MessageBox.Show(id_pengguna.ToString());
+            listjumlahprodukbygudang = controller.GetProdukListJumlah(gudang_id);
+            int jumlah_barang_suatu_gudang = 0;
+            foreach (var ini in listjumlahprodukbygudang)
+            {
+                jumlah_barang_suatu_gudang += ini.Jumlah_Barang;
+            }
+            MessageBox.Show(jumlah_barang_suatu_gudang.ToString());
             if (isNewData)
             {
-                result = controller.Create(produk, id_pengguna);
-                if (result > 0)
+                if(jumlah_barang_suatu_gudang + int.Parse(input_jml.Text) > int.Parse(input_kapasitas.Text))
                 {
-                    OnCreate(produk);
-                    this.Close();
+                    MessageBox.Show("Jumlah Barang melebihi kapasitas gudang!!!!");
+                }
+                else
+                {
+                    result = controller.Create(produk, id_pengguna);
+                    if (result > 0)
+                    {
+                        OnCreate(produk);
+                        this.Close();
+                    }
                 }
             }
             else
