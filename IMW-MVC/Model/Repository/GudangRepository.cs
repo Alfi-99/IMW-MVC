@@ -47,5 +47,63 @@ namespace IMW_MVC.Model.Repository
             }
             return list;
         }
+        public int Create(Gudang gudang)
+        {
+            int result = 0;
+            string sql = @"insert into gudang (Nama_Gudang, Alamat, Kapasitas) values (@Nama_Gudang, @Alamat, @Kapasitas)";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@Nama_Gudang", gudang.Nama_Gudang);
+                cmd.Parameters.AddWithValue("@Alamat", gudang.Alamat);
+                cmd.Parameters.AddWithValue("@Kapasitas", gudang.Kapasitas);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+        public int Update(Gudang gudang, int gudang_id)
+        {
+            int result = 0;
+            string sql = @"update gudang set Nama_Gudang = @Nama_Gudang, Alamat = @Alamat, Kapasitas = @Kapasitas where Gudang_ID = @gudang_id";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@Nama_Gudang", gudang.Nama_Gudang);
+                cmd.Parameters.AddWithValue("@Alamat", gudang.Alamat);
+                cmd.Parameters.AddWithValue("@Kapasitas", gudang.Kapasitas);
+                cmd.Parameters.AddWithValue("@gudang_id", gudang_id);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+        public int DeleteGudang(Gudang gudang)
+        {
+            int result = 0;
+            string sql = @"delete from gudang where Gudang_ID = " + gudang.Gudang_ID + "";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Delete error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
     }
 }

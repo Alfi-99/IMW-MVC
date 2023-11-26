@@ -289,7 +289,58 @@ namespace IMW_MVC.View
         {
             LoadDataGudang();   
         }
-
+        private void OnCreateGudangEventHandler(Gudang gudang)
+        {
+            LoadDataGudang();
+        }
+        private void OnUpdateGudangEventHandler(Gudang gudang)
+        {
+            LoadDataGudang();
+        }
+        private void btn_tambah_gudang_Click(object sender, EventArgs e)
+        {
+            AddGudang AddGudang = new AddGudang("Tambah Data Produk", controller_gudang);
+            AddGudang.OnCreate += OnCreateGudangEventHandler;
+            AddGudang.ShowDialog();
+        }
+        private void btn_update_gudang_Click(object sender, EventArgs e)
+        {
+            if (lvg.SelectedItems.Count > 0)
+            {
+                Gudang gudang = listGudang[lvg.SelectedIndices[0]];
+                AddGudang AddGudang = new AddGudang("Update Data Produk", gudang, controller_gudang);
+                AddGudang.OnUpdate += OnUpdateGudangEventHandler;
+                AddGudang.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+        private void btn_delete_gudang_Click(object sender, EventArgs e)
+        {
+            if (lvg.SelectedItems.Count > 0)
+            {
+                var konfirmasi = MessageBox.Show("Apakah data gudang ingin dihapus ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (konfirmasi == DialogResult.Yes)
+                {
+                    Gudang gudang = listGudang[lvg.SelectedIndices[0]];
+                    var result = controller_gudang.DeleteGudang(gudang);
+                    if (result > 0)
+                    {
+                        LoadDataGudang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data Tidak Berhasil Dihapus");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
         //End Tab Gudang
         //Tab User
         private void InisialisasiUser()

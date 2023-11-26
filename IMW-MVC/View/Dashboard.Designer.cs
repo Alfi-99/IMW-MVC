@@ -47,6 +47,10 @@
             this.lvu = new System.Windows.Forms.ListView();
             this.user_nama = new System.Windows.Forms.Label();
             this.status_user = new System.Windows.Forms.Label();
+            this.btn_delete_gudang = new System.Windows.Forms.Button();
+            this.btn_update_gudang = new System.Windows.Forms.Button();
+            this.btn_tampil_gudang = new System.Windows.Forms.Button();
+            this.btn_tambah_gudang = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -60,11 +64,11 @@
             this.tabControl1.Controls.Add(this.TabProduk);
             this.tabControl1.Controls.Add(this.TabGudang);
             this.tabControl1.Controls.Add(this.TabUser);
-            this.tabControl1.Location = new System.Drawing.Point(29, 74);
+            this.tabControl1.Location = new System.Drawing.Point(33, 74);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1418, 604);
+            this.tabControl1.Size = new System.Drawing.Size(1414, 604);
             this.tabControl1.TabIndex = 0;
             // 
             // TabTransaksi
@@ -146,7 +150,7 @@
             this.TabProduk.Margin = new System.Windows.Forms.Padding(2);
             this.TabProduk.Name = "TabProduk";
             this.TabProduk.Padding = new System.Windows.Forms.Padding(2);
-            this.TabProduk.Size = new System.Drawing.Size(1410, 578);
+            this.TabProduk.Size = new System.Drawing.Size(1406, 578);
             this.TabProduk.TabIndex = 1;
             this.TabProduk.Text = "Produk";
             this.TabProduk.UseVisualStyleBackColor = true;
@@ -206,11 +210,15 @@
             // 
             // TabGudang
             // 
+            this.TabGudang.Controls.Add(this.btn_tambah_gudang);
+            this.TabGudang.Controls.Add(this.btn_tampil_gudang);
+            this.TabGudang.Controls.Add(this.btn_update_gudang);
+            this.TabGudang.Controls.Add(this.btn_delete_gudang);
             this.TabGudang.Controls.Add(this.lvg);
             this.TabGudang.Location = new System.Drawing.Point(4, 22);
             this.TabGudang.Margin = new System.Windows.Forms.Padding(2);
             this.TabGudang.Name = "TabGudang";
-            this.TabGudang.Size = new System.Drawing.Size(1410, 578);
+            this.TabGudang.Size = new System.Drawing.Size(1406, 578);
             this.TabGudang.TabIndex = 2;
             this.TabGudang.Text = "Gudang";
             this.TabGudang.UseVisualStyleBackColor = true;
@@ -267,6 +275,46 @@
             this.status_user.TabIndex = 1;
             this.status_user.Text = "Status_Karyawan";
             // 
+            // btn_delete_gudang
+            // 
+            this.btn_delete_gudang.Location = new System.Drawing.Point(424, 500);
+            this.btn_delete_gudang.Name = "btn_delete_gudang";
+            this.btn_delete_gudang.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete_gudang.TabIndex = 1;
+            this.btn_delete_gudang.Text = "Delete";
+            this.btn_delete_gudang.UseVisualStyleBackColor = true;
+            this.btn_delete_gudang.Click += new System.EventHandler(this.btn_delete_gudang_Click);
+            // 
+            // btn_update_gudang
+            // 
+            this.btn_update_gudang.Location = new System.Drawing.Point(297, 500);
+            this.btn_update_gudang.Name = "btn_update_gudang";
+            this.btn_update_gudang.Size = new System.Drawing.Size(75, 23);
+            this.btn_update_gudang.TabIndex = 2;
+            this.btn_update_gudang.Text = "Update";
+            this.btn_update_gudang.UseVisualStyleBackColor = true;
+            this.btn_update_gudang.Click += new System.EventHandler(this.btn_update_gudang_Click);
+            // 
+            // btn_tampil_gudang
+            // 
+            this.btn_tampil_gudang.Location = new System.Drawing.Point(171, 500);
+            this.btn_tampil_gudang.Name = "btn_tampil_gudang";
+            this.btn_tampil_gudang.Size = new System.Drawing.Size(75, 23);
+            this.btn_tampil_gudang.TabIndex = 3;
+            this.btn_tampil_gudang.Text = "Tampil";
+            this.btn_tampil_gudang.UseVisualStyleBackColor = true;
+            this.btn_tampil_gudang.Click += new System.EventHandler(this.btn_tampil_gudang_Click);
+            // 
+            // btn_tambah_gudang
+            // 
+            this.btn_tambah_gudang.Location = new System.Drawing.Point(41, 500);
+            this.btn_tambah_gudang.Name = "btn_tambah_gudang";
+            this.btn_tambah_gudang.Size = new System.Drawing.Size(75, 23);
+            this.btn_tambah_gudang.TabIndex = 4;
+            this.btn_tambah_gudang.Text = "Tambah";
+            this.btn_tambah_gudang.UseVisualStyleBackColor = true;
+            this.btn_tambah_gudang.Click += new System.EventHandler(this.btn_tambah_gudang_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,5 +356,9 @@
         private System.Windows.Forms.Button btn_tambah_produk;
         private System.Windows.Forms.Label status_user;
         private System.Windows.Forms.ListView lvu;
+        private System.Windows.Forms.Button btn_tambah_gudang;
+        private System.Windows.Forms.Button btn_tampil_gudang;
+        private System.Windows.Forms.Button btn_update_gudang;
+        private System.Windows.Forms.Button btn_delete_gudang;
     }
 }
