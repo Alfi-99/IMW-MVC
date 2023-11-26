@@ -107,7 +107,7 @@ namespace IMW_MVC.View
         private void btn_tambah_transaksi_Click(object sender, EventArgs e)
         {
             AddTransaksi addTransaksi = new AddTransaksi("Tambah Data Transaksi", controller);
-            addTransaksi.OnUpdate += OnCreateEventHandler;
+            addTransaksi.OnCreate += OnCreateEventHandler;
             addTransaksi.ShowDialog();
         }
         private void btn_update_transaksi_Click(object sender, EventArgs e)
@@ -202,6 +202,16 @@ namespace IMW_MVC.View
         {
             LoadDataProduk();
         }
+        private void OnCreateProdukEventHandler(Produk produk)
+        {
+            LoadDataProduk();
+        }
+        private void btn_tambah_produk_Click(object sender, EventArgs e)
+        {
+            AddProduk AddProduk = new AddProduk("Tambah Data Produk", controller_produk);
+            AddProduk.OnCreate += OnCreateProdukEventHandler;
+            AddProduk.ShowDialog();
+        }
         //End Tab Produk
         //Tab Gudang
         private void InisialisasiGudang()
@@ -236,6 +246,7 @@ namespace IMW_MVC.View
         {
             LoadDataGudang();   
         }
+
         //End Tab Gudang
         //Tab User
         private void InisialisasiUser()

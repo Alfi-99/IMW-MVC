@@ -47,6 +47,5 @@ namespace IMW_MVC.Model.Repository
             }
             return list;
         }
-
     }
 }

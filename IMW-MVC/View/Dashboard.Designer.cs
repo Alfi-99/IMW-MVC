@@ -44,9 +44,9 @@
             this.TabGudang = new System.Windows.Forms.TabPage();
             this.lvg = new System.Windows.Forms.ListView();
             this.TabUser = new System.Windows.Forms.TabPage();
+            this.lvu = new System.Windows.Forms.ListView();
             this.user_nama = new System.Windows.Forms.Label();
             this.status_user = new System.Windows.Forms.Label();
-            this.lvu = new System.Windows.Forms.ListView();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -61,7 +61,7 @@
             this.tabControl1.Controls.Add(this.TabGudang);
             this.tabControl1.Controls.Add(this.TabUser);
             this.tabControl1.Location = new System.Drawing.Point(29, 74);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1418, 604);
@@ -75,9 +75,9 @@
             this.TabTransaksi.Controls.Add(this.btn_tampil_transaksi);
             this.TabTransaksi.Controls.Add(this.btn_tambah_transaksi);
             this.TabTransaksi.Location = new System.Drawing.Point(4, 22);
-            this.TabTransaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabTransaksi.Margin = new System.Windows.Forms.Padding(2);
             this.TabTransaksi.Name = "TabTransaksi";
-            this.TabTransaksi.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabTransaksi.Padding = new System.Windows.Forms.Padding(2);
             this.TabTransaksi.Size = new System.Drawing.Size(1410, 578);
             this.TabTransaksi.TabIndex = 0;
             this.TabTransaksi.Text = "Transaksi";
@@ -107,7 +107,7 @@
             // 
             this.lvt.HideSelection = false;
             this.lvt.Location = new System.Drawing.Point(0, 0);
-            this.lvt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvt.Margin = new System.Windows.Forms.Padding(2);
             this.lvt.Name = "lvt";
             this.lvt.Size = new System.Drawing.Size(1375, 454);
             this.lvt.TabIndex = 0;
@@ -116,7 +116,7 @@
             // btn_tampil_transaksi
             // 
             this.btn_tampil_transaksi.Location = new System.Drawing.Point(135, 488);
-            this.btn_tampil_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tampil_transaksi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tampil_transaksi.Name = "btn_tampil_transaksi";
             this.btn_tampil_transaksi.Size = new System.Drawing.Size(103, 19);
             this.btn_tampil_transaksi.TabIndex = 2;
@@ -127,7 +127,7 @@
             // btn_tambah_transaksi
             // 
             this.btn_tambah_transaksi.Location = new System.Drawing.Point(14, 488);
-            this.btn_tambah_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tambah_transaksi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
             this.btn_tambah_transaksi.Size = new System.Drawing.Size(99, 19);
             this.btn_tambah_transaksi.TabIndex = 1;
@@ -143,9 +143,9 @@
             this.TabProduk.Controls.Add(this.btn_tambah_produk);
             this.TabProduk.Controls.Add(this.lvp);
             this.TabProduk.Location = new System.Drawing.Point(4, 22);
-            this.TabProduk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabProduk.Margin = new System.Windows.Forms.Padding(2);
             this.TabProduk.Name = "TabProduk";
-            this.TabProduk.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabProduk.Padding = new System.Windows.Forms.Padding(2);
             this.TabProduk.Size = new System.Drawing.Size(1410, 578);
             this.TabProduk.TabIndex = 1;
             this.TabProduk.Text = "Produk";
@@ -154,7 +154,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(272, 498);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 19);
             this.button2.TabIndex = 4;
@@ -164,7 +164,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(387, 498);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 3;
@@ -174,7 +174,7 @@
             // btn_tampil_produk
             // 
             this.btn_tampil_produk.Location = new System.Drawing.Point(48, 498);
-            this.btn_tampil_produk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tampil_produk.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tampil_produk.Name = "btn_tampil_produk";
             this.btn_tampil_produk.Size = new System.Drawing.Size(56, 19);
             this.btn_tampil_produk.TabIndex = 2;
@@ -185,12 +185,13 @@
             // btn_tambah_produk
             // 
             this.btn_tambah_produk.Location = new System.Drawing.Point(142, 498);
-            this.btn_tambah_produk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tambah_produk.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tambah_produk.Name = "btn_tambah_produk";
             this.btn_tambah_produk.Size = new System.Drawing.Size(56, 19);
             this.btn_tambah_produk.TabIndex = 1;
             this.btn_tambah_produk.Text = "Tambah";
             this.btn_tambah_produk.UseVisualStyleBackColor = true;
+            this.btn_tambah_produk.Click += new System.EventHandler(this.btn_tambah_produk_Click);
             // 
             // lvp
             // 
@@ -205,7 +206,7 @@
             // 
             this.TabGudang.Controls.Add(this.lvg);
             this.TabGudang.Location = new System.Drawing.Point(4, 22);
-            this.TabGudang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabGudang.Margin = new System.Windows.Forms.Padding(2);
             this.TabGudang.Name = "TabGudang";
             this.TabGudang.Size = new System.Drawing.Size(1410, 578);
             this.TabGudang.TabIndex = 2;
@@ -216,7 +217,7 @@
             // 
             this.lvg.HideSelection = false;
             this.lvg.Location = new System.Drawing.Point(-3, 0);
-            this.lvg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvg.Margin = new System.Windows.Forms.Padding(2);
             this.lvg.Name = "lvg";
             this.lvg.Size = new System.Drawing.Size(1432, 430);
             this.lvg.TabIndex = 0;
@@ -226,12 +227,21 @@
             // 
             this.TabUser.Controls.Add(this.lvu);
             this.TabUser.Location = new System.Drawing.Point(4, 22);
-            this.TabUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabUser.Margin = new System.Windows.Forms.Padding(2);
             this.TabUser.Name = "TabUser";
             this.TabUser.Size = new System.Drawing.Size(1410, 578);
             this.TabUser.TabIndex = 3;
             this.TabUser.Text = "User";
             this.TabUser.UseVisualStyleBackColor = true;
+            // 
+            // lvu
+            // 
+            this.lvu.HideSelection = false;
+            this.lvu.Location = new System.Drawing.Point(0, 0);
+            this.lvu.Name = "lvu";
+            this.lvu.Size = new System.Drawing.Size(1410, 473);
+            this.lvu.TabIndex = 0;
+            this.lvu.UseCompatibleStateImageBehavior = false;
             // 
             // user_nama
             // 
@@ -254,15 +264,6 @@
             this.status_user.Size = new System.Drawing.Size(167, 24);
             this.status_user.TabIndex = 1;
             this.status_user.Text = "Status_Karyawan";
-            // 
-            // lvu
-            // 
-            this.lvu.HideSelection = false;
-            this.lvu.Location = new System.Drawing.Point(0, 0);
-            this.lvu.Name = "lvu";
-            this.lvu.Size = new System.Drawing.Size(1410, 473);
-            this.lvu.TabIndex = 0;
-            this.lvu.UseCompatibleStateImageBehavior = false;
             // 
             // Dashboard
             // 

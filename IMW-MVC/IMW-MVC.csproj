@@ -63,6 +63,12 @@
     <Compile Include="Model\Repository\PenggunaRepository.cs" />
     <Compile Include="Model\Repository\ProdukRepository.cs" />
     <Compile Include="Model\Repository\TransaksiRepository.cs" />
+    <Compile Include="View\AddProduk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddProduk.Designer.cs">
+      <DependentUpon>AddProduk.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AddTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AddProduk.resx">
+      <DependentUpon>AddProduk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddTransaksi.resx">
       <DependentUpon>AddTransaksi.cs</DependentUpon>
     </EmbeddedResource>

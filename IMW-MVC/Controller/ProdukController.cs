@@ -24,5 +24,121 @@ namespace IMW_MVC.Controller
             }
             return list;
         }
+        public List<Gudang> ReadProdukOnlyForComboBox() 
+        {
+            List<Gudang> list = new List<Gudang>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProdukRepository(context);
+                list = _repository.ReadProdukOnlyForComboBox();
+            }
+            return list;
+        }
+        public List<Gudang> ReadForFillForm(int gudang_id)
+        {
+            List<Gudang> list = new List<Gudang>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProdukRepository(context);
+                list = _repository.ReadForFillForm(gudang_id);
+            }
+            return list;
+        }
+        public int Create(Produk produk, int id_pengguna)
+        {
+            int result = 0;
+            if (string.IsNullOrEmpty(produk.Gudang_ID.ToString()))
+            {
+                MessageBox.Show("Product harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Nama_Barang.ToString()))
+            {
+                MessageBox.Show("Nama Barang harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Deskripsi.ToString()))
+            {
+                MessageBox.Show("Deskripsi harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Jumlah_Barang.ToString()))
+            {
+                MessageBox.Show("Jumlah Barang harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Harga.ToString()))
+            {
+                MessageBox.Show("Harga harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProdukRepository(context);
+                result = _repository.Create(produk, id_pengguna);
+            }
+            if (result > 0)
+            {
+                MessageBox.Show("Data Transaksi berhasil disimpan !", "Informasi",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Data Transaksi gagal disimpan !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return result;
+        }
+        public int Update(Produk produk, int id_pengguna)
+        {
+            int result = 0;
+            if (string.IsNullOrEmpty(produk.Gudang_ID.ToString()))
+            {
+                MessageBox.Show("Product harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Nama_Barang.ToString()))
+            {
+                MessageBox.Show("Nama Barang harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Deskripsi.ToString()))
+            {
+                MessageBox.Show("Deskripsi harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Jumlah_Barang.ToString()))
+            {
+                MessageBox.Show("Jumlah Barang harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(produk.Harga.ToString()))
+            {
+                MessageBox.Show("Harga harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProdukRepository(context);
+                result = _repository.Update(produk, id_pengguna);
+            }
+            if (result > 0)
+            {
+                MessageBox.Show("Data Transaksi berhasil disimpan !", "Informasi",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Data Transaksi gagal disimpan !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return result;
+        }
     }
 }
