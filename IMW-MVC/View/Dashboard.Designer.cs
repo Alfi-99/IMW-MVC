@@ -175,10 +175,10 @@
             // 
             // btn_tampil_produk
             // 
-            this.btn_tampil_produk.Location = new System.Drawing.Point(48, 498);
+            this.btn_tampil_produk.Location = new System.Drawing.Point(154, 498);
             this.btn_tampil_produk.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tampil_produk.Name = "btn_tampil_produk";
-            this.btn_tampil_produk.Size = new System.Drawing.Size(56, 19);
+            this.btn_tampil_produk.Size = new System.Drawing.Size(64, 19);
             this.btn_tampil_produk.TabIndex = 2;
             this.btn_tampil_produk.Text = "Tampil";
             this.btn_tampil_produk.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             // 
             // btn_tambah_produk
             // 
-            this.btn_tambah_produk.Location = new System.Drawing.Point(142, 498);
+            this.btn_tambah_produk.Location = new System.Drawing.Point(51, 498);
             this.btn_tambah_produk.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tambah_produk.Name = "btn_tambah_produk";
             this.btn_tambah_produk.Size = new System.Drawing.Size(56, 19);
