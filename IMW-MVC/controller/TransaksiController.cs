@@ -144,5 +144,15 @@ namespace IMW_MVC.Controller
             }
             return result;
         }
+        public List<Transaksi> SearchDataTransaksi(string input_search)
+        {
+            List<Transaksi> list = new List<Transaksi>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new TransaksiRepository(context);
+                list = _repository.SearchDataTransaksi(input_search);
+            }
+            return list;
+        }
     }
 }

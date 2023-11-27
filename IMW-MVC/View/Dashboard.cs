@@ -24,6 +24,7 @@ namespace IMW_MVC.View
         private GudangController controller_gudang;
         private List<Pengguna> listPengguna = new List<Pengguna>();
         private PenggunaController controller_pengguna;
+        private List<Transaksi> listTransaksiBySearch = new List<Transaksi>();
 
         public Dashboard()
         {
@@ -152,6 +153,32 @@ namespace IMW_MVC.View
             {
                 MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+        private void LoadDataSearchTransaksi()
+        {
+            lvt.Items.Clear();
+            string input_search = input_search_transaksi.Text;
+            listTransaksiBySearch = controller.SearchDataTransaksi(input_search);
+            MessageBox.Show(input_search);
+            foreach (var trs in listTransaksiBySearch)
+            {
+                var noUrut = lvt.Items.Count + 1;
+                var item = new ListViewItem(noUrut.ToString());
+                item.SubItems.Add(trs.Transaksi_ID.ToString());
+                item.SubItems.Add(trs.Nama_barang);
+                item.SubItems.Add(trs.Tanggal_Masuk);
+                item.SubItems.Add(trs.Deskripsi);
+                item.SubItems.Add(trs.jumlah_barang.ToString());
+                item.SubItems.Add(trs.harga_barang.ToString());
+                item.SubItems.Add(trs.Gudang);
+                item.SubItems.Add(trs.Alamat);
+                item.SubItems.Add(trs.User);
+                lvt.Items.Add(item);
+            }
+        }
+        private void btn_search_transaksi_Click(object sender, EventArgs e)
+        {
+            LoadDataSearchTransaksi();
         }
         //End Tab Transaksi
         //Tab Produk
@@ -404,6 +431,7 @@ namespace IMW_MVC.View
                 MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
         //End Tab User
     }
 }

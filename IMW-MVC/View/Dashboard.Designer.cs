@@ -55,6 +55,9 @@
             this.btn_tampil_user = new System.Windows.Forms.Button();
             this.btn_update_user = new System.Windows.Forms.Button();
             this.btn_delete_user = new System.Windows.Forms.Button();
+            this.input_search_transaksi = new System.Windows.Forms.TextBox();
+            this.btn_search_transaksi = new System.Windows.Forms.Button();
+            this.tabLog = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -68,6 +71,7 @@
             this.tabControl1.Controls.Add(this.TabProduk);
             this.tabControl1.Controls.Add(this.TabGudang);
             this.tabControl1.Controls.Add(this.TabUser);
+            this.tabControl1.Controls.Add(this.tabLog);
             this.tabControl1.Location = new System.Drawing.Point(44, 91);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -77,6 +81,8 @@
             // 
             // TabTransaksi
             // 
+            this.TabTransaksi.Controls.Add(this.btn_search_transaksi);
+            this.TabTransaksi.Controls.Add(this.input_search_transaksi);
             this.TabTransaksi.Controls.Add(this.btn_delete_transaksi);
             this.TabTransaksi.Controls.Add(this.btn_update_transaksi);
             this.TabTransaksi.Controls.Add(this.lvt);
@@ -368,6 +374,32 @@
             this.btn_delete_user.Text = "Delete";
             this.btn_delete_user.UseVisualStyleBackColor = true;
             // 
+            // input_search_transaksi
+            // 
+            this.input_search_transaksi.Location = new System.Drawing.Point(802, 604);
+            this.input_search_transaksi.Name = "input_search_transaksi";
+            this.input_search_transaksi.Size = new System.Drawing.Size(173, 22);
+            this.input_search_transaksi.TabIndex = 3;
+            // 
+            // btn_search_transaksi
+            // 
+            this.btn_search_transaksi.Location = new System.Drawing.Point(1016, 604);
+            this.btn_search_transaksi.Name = "btn_search_transaksi";
+            this.btn_search_transaksi.Size = new System.Drawing.Size(75, 23);
+            this.btn_search_transaksi.TabIndex = 4;
+            this.btn_search_transaksi.Text = "search";
+            this.btn_search_transaksi.UseVisualStyleBackColor = true;
+            this.btn_search_transaksi.Click += new System.EventHandler(this.btn_search_transaksi_Click);
+            // 
+            // tabLog
+            // 
+            this.tabLog.Location = new System.Drawing.Point(4, 25);
+            this.tabLog.Name = "tabLog";
+            this.tabLog.Size = new System.Drawing.Size(1877, 714);
+            this.tabLog.TabIndex = 4;
+            this.tabLog.Text = "History";
+            this.tabLog.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,6 +413,7 @@
             this.Text = "Dashboard";
             this.tabControl1.ResumeLayout(false);
             this.TabTransaksi.ResumeLayout(false);
+            this.TabTransaksi.PerformLayout();
             this.TabProduk.ResumeLayout(false);
             this.TabGudang.ResumeLayout(false);
             this.TabUser.ResumeLayout(false);
@@ -418,5 +451,8 @@
         private System.Windows.Forms.Button btn_update_user;
         private System.Windows.Forms.Button btn_tampil_user;
         private System.Windows.Forms.Button btn_tambah_user;
+        private System.Windows.Forms.Button btn_search_transaksi;
+        private System.Windows.Forms.TextBox input_search_transaksi;
+        private System.Windows.Forms.TabPage tabLog;
     }
 }
