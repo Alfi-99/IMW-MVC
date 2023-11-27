@@ -370,6 +370,40 @@ namespace IMW_MVC.View
                 lvu.Items.Add(item);
             }
         }
+
+        private void btn_tampil_user_Click(object sender, EventArgs e)
+        {
+            LoadDataUser();
+        }
+        private void OnCreateUserEventHandler(Pengguna pengguna)
+        {
+            LoadDataUser();
+        }
+        private void OnUpdateUserEventHandler(Pengguna pengguna)
+        {
+            LoadDataUser();
+        }
+        private void btn_tambah_user_Click(object sender, EventArgs e)
+        {
+            AddUser AddUser = new AddUser("Tambah Data User", controller_pengguna);
+            AddUser.OnCreate += OnCreateUserEventHandler;
+            AddUser.ShowDialog();
+        }
+
+        private void btn_update_user_Click(object sender, EventArgs e)
+        {
+            if (lvu.SelectedItems.Count > 0)
+            {
+                Pengguna user = listPengguna[lvu.SelectedIndices[0]];
+                AddUser AddUser = new AddUser("Update Data User", user,controller_pengguna);
+                AddUser.OnCreate += OnUpdateUserEventHandler;
+                AddUser.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
         //End Tab User
     }
 }
