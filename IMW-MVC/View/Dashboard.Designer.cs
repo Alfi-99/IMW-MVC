@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabTransaksi = new System.Windows.Forms.TabPage();
+            this.btn_search_transaksi = new System.Windows.Forms.Button();
+            this.input_search_transaksi = new System.Windows.Forms.TextBox();
             this.btn_delete_transaksi = new System.Windows.Forms.Button();
             this.btn_update_transaksi = new System.Windows.Forms.Button();
             this.lvt = new System.Windows.Forms.ListView();
@@ -48,16 +50,14 @@
             this.btn_delete_gudang = new System.Windows.Forms.Button();
             this.lvg = new System.Windows.Forms.ListView();
             this.TabUser = new System.Windows.Forms.TabPage();
+            this.btn_delete_user = new System.Windows.Forms.Button();
+            this.btn_update_user = new System.Windows.Forms.Button();
+            this.btn_tampil_user = new System.Windows.Forms.Button();
+            this.btn_tambah_user = new System.Windows.Forms.Button();
             this.lvu = new System.Windows.Forms.ListView();
+            this.tabLog = new System.Windows.Forms.TabPage();
             this.user_nama = new System.Windows.Forms.Label();
             this.status_user = new System.Windows.Forms.Label();
-            this.btn_tambah_user = new System.Windows.Forms.Button();
-            this.btn_tampil_user = new System.Windows.Forms.Button();
-            this.btn_update_user = new System.Windows.Forms.Button();
-            this.btn_delete_user = new System.Windows.Forms.Button();
-            this.input_search_transaksi = new System.Windows.Forms.TextBox();
-            this.btn_search_transaksi = new System.Windows.Forms.Button();
-            this.tabLog = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -72,11 +72,11 @@
             this.tabControl1.Controls.Add(this.TabGudang);
             this.tabControl1.Controls.Add(this.TabUser);
             this.tabControl1.Controls.Add(this.tabLog);
-            this.tabControl1.Location = new System.Drawing.Point(44, 91);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(33, 74);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1885, 743);
+            this.tabControl1.Size = new System.Drawing.Size(1414, 604);
             this.tabControl1.TabIndex = 0;
             // 
             // TabTransaksi
@@ -88,21 +88,39 @@
             this.TabTransaksi.Controls.Add(this.lvt);
             this.TabTransaksi.Controls.Add(this.btn_tampil_transaksi);
             this.TabTransaksi.Controls.Add(this.btn_tambah_transaksi);
-            this.TabTransaksi.Location = new System.Drawing.Point(4, 25);
-            this.TabTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabTransaksi.Location = new System.Drawing.Point(4, 22);
+            this.TabTransaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabTransaksi.Name = "TabTransaksi";
-            this.TabTransaksi.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabTransaksi.Size = new System.Drawing.Size(1877, 714);
+            this.TabTransaksi.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabTransaksi.Size = new System.Drawing.Size(1406, 578);
             this.TabTransaksi.TabIndex = 0;
             this.TabTransaksi.Text = "Transaksi";
             this.TabTransaksi.UseVisualStyleBackColor = true;
             // 
+            // btn_search_transaksi
+            // 
+            this.btn_search_transaksi.Location = new System.Drawing.Point(762, 491);
+            this.btn_search_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_search_transaksi.Name = "btn_search_transaksi";
+            this.btn_search_transaksi.Size = new System.Drawing.Size(56, 19);
+            this.btn_search_transaksi.TabIndex = 4;
+            this.btn_search_transaksi.Text = "search";
+            this.btn_search_transaksi.UseVisualStyleBackColor = true;
+            this.btn_search_transaksi.Click += new System.EventHandler(this.btn_search_transaksi_Click);
+            // 
+            // input_search_transaksi
+            // 
+            this.input_search_transaksi.Location = new System.Drawing.Point(602, 491);
+            this.input_search_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.input_search_transaksi.Name = "input_search_transaksi";
+            this.input_search_transaksi.Size = new System.Drawing.Size(131, 20);
+            this.input_search_transaksi.TabIndex = 3;
+            // 
             // btn_delete_transaksi
             // 
-            this.btn_delete_transaksi.Location = new System.Drawing.Point(616, 601);
-            this.btn_delete_transaksi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_delete_transaksi.Location = new System.Drawing.Point(462, 488);
             this.btn_delete_transaksi.Name = "btn_delete_transaksi";
-            this.btn_delete_transaksi.Size = new System.Drawing.Size(100, 28);
+            this.btn_delete_transaksi.Size = new System.Drawing.Size(75, 23);
             this.btn_delete_transaksi.TabIndex = 1;
             this.btn_delete_transaksi.Text = "Delete";
             this.btn_delete_transaksi.UseVisualStyleBackColor = true;
@@ -110,10 +128,9 @@
             // 
             // btn_update_transaksi
             // 
-            this.btn_update_transaksi.Location = new System.Drawing.Point(472, 601);
-            this.btn_update_transaksi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_update_transaksi.Location = new System.Drawing.Point(354, 488);
             this.btn_update_transaksi.Name = "btn_update_transaksi";
-            this.btn_update_transaksi.Size = new System.Drawing.Size(100, 28);
+            this.btn_update_transaksi.Size = new System.Drawing.Size(75, 23);
             this.btn_update_transaksi.TabIndex = 2;
             this.btn_update_transaksi.Text = "Update";
             this.btn_update_transaksi.UseVisualStyleBackColor = true;
@@ -123,18 +140,18 @@
             // 
             this.lvt.HideSelection = false;
             this.lvt.Location = new System.Drawing.Point(0, 0);
-            this.lvt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvt.Name = "lvt";
-            this.lvt.Size = new System.Drawing.Size(1832, 558);
+            this.lvt.Size = new System.Drawing.Size(1375, 454);
             this.lvt.TabIndex = 0;
             this.lvt.UseCompatibleStateImageBehavior = false;
             // 
             // btn_tampil_transaksi
             // 
-            this.btn_tampil_transaksi.Location = new System.Drawing.Point(180, 601);
-            this.btn_tampil_transaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_tampil_transaksi.Location = new System.Drawing.Point(135, 488);
+            this.btn_tampil_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_tampil_transaksi.Name = "btn_tampil_transaksi";
-            this.btn_tampil_transaksi.Size = new System.Drawing.Size(137, 23);
+            this.btn_tampil_transaksi.Size = new System.Drawing.Size(103, 19);
             this.btn_tampil_transaksi.TabIndex = 2;
             this.btn_tampil_transaksi.Text = "Tampil";
             this.btn_tampil_transaksi.UseVisualStyleBackColor = true;
@@ -142,10 +159,10 @@
             // 
             // btn_tambah_transaksi
             // 
-            this.btn_tambah_transaksi.Location = new System.Drawing.Point(19, 601);
-            this.btn_tambah_transaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_tambah_transaksi.Location = new System.Drawing.Point(14, 488);
+            this.btn_tambah_transaksi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
-            this.btn_tambah_transaksi.Size = new System.Drawing.Size(132, 23);
+            this.btn_tambah_transaksi.Size = new System.Drawing.Size(99, 19);
             this.btn_tambah_transaksi.TabIndex = 1;
             this.btn_tambah_transaksi.Text = "Tambah";
             this.btn_tambah_transaksi.UseVisualStyleBackColor = true;
@@ -158,21 +175,21 @@
             this.TabProduk.Controls.Add(this.btn_tampil_produk);
             this.TabProduk.Controls.Add(this.btn_tambah_produk);
             this.TabProduk.Controls.Add(this.lvp);
-            this.TabProduk.Location = new System.Drawing.Point(4, 25);
-            this.TabProduk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabProduk.Location = new System.Drawing.Point(4, 22);
+            this.TabProduk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabProduk.Name = "TabProduk";
-            this.TabProduk.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabProduk.Size = new System.Drawing.Size(1877, 714);
+            this.TabProduk.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TabProduk.Size = new System.Drawing.Size(1406, 578);
             this.TabProduk.TabIndex = 1;
             this.TabProduk.Text = "Produk";
             this.TabProduk.UseVisualStyleBackColor = true;
             // 
             // btn_update_produk
             // 
-            this.btn_update_produk.Location = new System.Drawing.Point(363, 613);
-            this.btn_update_produk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_update_produk.Location = new System.Drawing.Point(272, 498);
+            this.btn_update_produk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_update_produk.Name = "btn_update_produk";
-            this.btn_update_produk.Size = new System.Drawing.Size(75, 23);
+            this.btn_update_produk.Size = new System.Drawing.Size(56, 19);
             this.btn_update_produk.TabIndex = 4;
             this.btn_update_produk.Text = "Update";
             this.btn_update_produk.UseVisualStyleBackColor = true;
@@ -180,10 +197,10 @@
             // 
             // btn_delete_produk
             // 
-            this.btn_delete_produk.Location = new System.Drawing.Point(516, 613);
-            this.btn_delete_produk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_delete_produk.Location = new System.Drawing.Point(387, 498);
+            this.btn_delete_produk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_delete_produk.Name = "btn_delete_produk";
-            this.btn_delete_produk.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete_produk.Size = new System.Drawing.Size(56, 19);
             this.btn_delete_produk.TabIndex = 3;
             this.btn_delete_produk.Text = "Delete";
             this.btn_delete_produk.UseVisualStyleBackColor = true;
@@ -191,10 +208,10 @@
             // 
             // btn_tampil_produk
             // 
-            this.btn_tampil_produk.Location = new System.Drawing.Point(205, 613);
-            this.btn_tampil_produk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_tampil_produk.Location = new System.Drawing.Point(154, 498);
+            this.btn_tampil_produk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_tampil_produk.Name = "btn_tampil_produk";
-            this.btn_tampil_produk.Size = new System.Drawing.Size(85, 23);
+            this.btn_tampil_produk.Size = new System.Drawing.Size(64, 19);
             this.btn_tampil_produk.TabIndex = 2;
             this.btn_tampil_produk.Text = "Tampil";
             this.btn_tampil_produk.UseVisualStyleBackColor = true;
@@ -202,10 +219,10 @@
             // 
             // btn_tambah_produk
             // 
-            this.btn_tambah_produk.Location = new System.Drawing.Point(68, 613);
-            this.btn_tambah_produk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_tambah_produk.Location = new System.Drawing.Point(51, 498);
+            this.btn_tambah_produk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_tambah_produk.Name = "btn_tambah_produk";
-            this.btn_tambah_produk.Size = new System.Drawing.Size(75, 23);
+            this.btn_tambah_produk.Size = new System.Drawing.Size(56, 19);
             this.btn_tambah_produk.TabIndex = 1;
             this.btn_tambah_produk.Text = "Tambah";
             this.btn_tambah_produk.UseVisualStyleBackColor = true;
@@ -215,9 +232,8 @@
             // 
             this.lvp.HideSelection = false;
             this.lvp.Location = new System.Drawing.Point(0, 0);
-            this.lvp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvp.Name = "lvp";
-            this.lvp.Size = new System.Drawing.Size(1900, 570);
+            this.lvp.Size = new System.Drawing.Size(1426, 464);
             this.lvp.TabIndex = 0;
             this.lvp.UseCompatibleStateImageBehavior = false;
             // 
@@ -228,20 +244,19 @@
             this.TabGudang.Controls.Add(this.btn_update_gudang);
             this.TabGudang.Controls.Add(this.btn_delete_gudang);
             this.TabGudang.Controls.Add(this.lvg);
-            this.TabGudang.Location = new System.Drawing.Point(4, 25);
-            this.TabGudang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabGudang.Location = new System.Drawing.Point(4, 22);
+            this.TabGudang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabGudang.Name = "TabGudang";
-            this.TabGudang.Size = new System.Drawing.Size(1877, 714);
+            this.TabGudang.Size = new System.Drawing.Size(1406, 578);
             this.TabGudang.TabIndex = 2;
             this.TabGudang.Text = "Gudang";
             this.TabGudang.UseVisualStyleBackColor = true;
             // 
             // btn_tambah_gudang
             // 
-            this.btn_tambah_gudang.Location = new System.Drawing.Point(55, 615);
-            this.btn_tambah_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_tambah_gudang.Location = new System.Drawing.Point(41, 500);
             this.btn_tambah_gudang.Name = "btn_tambah_gudang";
-            this.btn_tambah_gudang.Size = new System.Drawing.Size(100, 28);
+            this.btn_tambah_gudang.Size = new System.Drawing.Size(75, 23);
             this.btn_tambah_gudang.TabIndex = 4;
             this.btn_tambah_gudang.Text = "Tambah";
             this.btn_tambah_gudang.UseVisualStyleBackColor = true;
@@ -249,10 +264,9 @@
             // 
             // btn_tampil_gudang
             // 
-            this.btn_tampil_gudang.Location = new System.Drawing.Point(228, 615);
-            this.btn_tampil_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_tampil_gudang.Location = new System.Drawing.Point(171, 500);
             this.btn_tampil_gudang.Name = "btn_tampil_gudang";
-            this.btn_tampil_gudang.Size = new System.Drawing.Size(100, 28);
+            this.btn_tampil_gudang.Size = new System.Drawing.Size(75, 23);
             this.btn_tampil_gudang.TabIndex = 3;
             this.btn_tampil_gudang.Text = "Tampil";
             this.btn_tampil_gudang.UseVisualStyleBackColor = true;
@@ -260,10 +274,9 @@
             // 
             // btn_update_gudang
             // 
-            this.btn_update_gudang.Location = new System.Drawing.Point(396, 615);
-            this.btn_update_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_update_gudang.Location = new System.Drawing.Point(297, 500);
             this.btn_update_gudang.Name = "btn_update_gudang";
-            this.btn_update_gudang.Size = new System.Drawing.Size(100, 28);
+            this.btn_update_gudang.Size = new System.Drawing.Size(75, 23);
             this.btn_update_gudang.TabIndex = 2;
             this.btn_update_gudang.Text = "Update";
             this.btn_update_gudang.UseVisualStyleBackColor = true;
@@ -271,10 +284,9 @@
             // 
             // btn_delete_gudang
             // 
-            this.btn_delete_gudang.Location = new System.Drawing.Point(565, 615);
-            this.btn_delete_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_delete_gudang.Location = new System.Drawing.Point(424, 500);
             this.btn_delete_gudang.Name = "btn_delete_gudang";
-            this.btn_delete_gudang.Size = new System.Drawing.Size(100, 28);
+            this.btn_delete_gudang.Size = new System.Drawing.Size(75, 23);
             this.btn_delete_gudang.TabIndex = 1;
             this.btn_delete_gudang.Text = "Delete";
             this.btn_delete_gudang.UseVisualStyleBackColor = true;
@@ -283,10 +295,10 @@
             // lvg
             // 
             this.lvg.HideSelection = false;
-            this.lvg.Location = new System.Drawing.Point(-4, 0);
-            this.lvg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvg.Location = new System.Drawing.Point(-3, 0);
+            this.lvg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvg.Name = "lvg";
-            this.lvg.Size = new System.Drawing.Size(1908, 528);
+            this.lvg.Size = new System.Drawing.Size(1432, 430);
             this.lvg.TabIndex = 0;
             this.lvg.UseCompatibleStateImageBehavior = false;
             // 
@@ -297,31 +309,85 @@
             this.TabUser.Controls.Add(this.btn_tampil_user);
             this.TabUser.Controls.Add(this.btn_tambah_user);
             this.TabUser.Controls.Add(this.lvu);
-            this.TabUser.Location = new System.Drawing.Point(4, 25);
-            this.TabUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabUser.Location = new System.Drawing.Point(4, 22);
+            this.TabUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabUser.Name = "TabUser";
-            this.TabUser.Size = new System.Drawing.Size(1877, 714);
+            this.TabUser.Size = new System.Drawing.Size(1406, 578);
             this.TabUser.TabIndex = 3;
             this.TabUser.Text = "User";
             this.TabUser.UseVisualStyleBackColor = true;
+            // 
+            // btn_delete_user
+            // 
+            this.btn_delete_user.Location = new System.Drawing.Point(386, 510);
+            this.btn_delete_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_delete_user.Name = "btn_delete_user";
+            this.btn_delete_user.Size = new System.Drawing.Size(56, 19);
+            this.btn_delete_user.TabIndex = 4;
+            this.btn_delete_user.Text = "Delete";
+            this.btn_delete_user.UseVisualStyleBackColor = true;
+            this.btn_delete_user.Click += new System.EventHandler(this.btn_delete_user_Click);
+            // 
+            // btn_update_user
+            // 
+            this.btn_update_user.Location = new System.Drawing.Point(267, 510);
+            this.btn_update_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_update_user.Name = "btn_update_user";
+            this.btn_update_user.Size = new System.Drawing.Size(56, 19);
+            this.btn_update_user.TabIndex = 3;
+            this.btn_update_user.Text = "Update";
+            this.btn_update_user.UseVisualStyleBackColor = true;
+            this.btn_update_user.Click += new System.EventHandler(this.btn_update_user_Click);
+            // 
+            // btn_tampil_user
+            // 
+            this.btn_tampil_user.Location = new System.Drawing.Point(155, 510);
+            this.btn_tampil_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tampil_user.Name = "btn_tampil_user";
+            this.btn_tampil_user.Size = new System.Drawing.Size(56, 19);
+            this.btn_tampil_user.TabIndex = 2;
+            this.btn_tampil_user.Text = "Tampil";
+            this.btn_tampil_user.UseVisualStyleBackColor = true;
+            this.btn_tampil_user.Click += new System.EventHandler(this.btn_tampil_user_Click);
+            // 
+            // btn_tambah_user
+            // 
+            this.btn_tambah_user.Location = new System.Drawing.Point(49, 510);
+            this.btn_tambah_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tambah_user.Name = "btn_tambah_user";
+            this.btn_tambah_user.Size = new System.Drawing.Size(56, 19);
+            this.btn_tambah_user.TabIndex = 1;
+            this.btn_tambah_user.Text = "Tambah";
+            this.btn_tambah_user.UseVisualStyleBackColor = true;
+            this.btn_tambah_user.Click += new System.EventHandler(this.btn_tambah_user_Click);
             // 
             // lvu
             // 
             this.lvu.HideSelection = false;
             this.lvu.Location = new System.Drawing.Point(0, 0);
-            this.lvu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvu.Name = "lvu";
-            this.lvu.Size = new System.Drawing.Size(1879, 581);
+            this.lvu.Size = new System.Drawing.Size(1410, 473);
             this.lvu.TabIndex = 0;
             this.lvu.UseCompatibleStateImageBehavior = false;
+            // 
+            // tabLog
+            // 
+            this.tabLog.Location = new System.Drawing.Point(4, 22);
+            this.tabLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabLog.Name = "tabLog";
+            this.tabLog.Size = new System.Drawing.Size(1406, 578);
+            this.tabLog.TabIndex = 4;
+            this.tabLog.Text = "History";
+            this.tabLog.UseVisualStyleBackColor = true;
             // 
             // user_nama
             // 
             this.user_nama.AutoSize = true;
             this.user_nama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user_nama.Location = new System.Drawing.Point(1616, 33);
+            this.user_nama.Location = new System.Drawing.Point(1212, 27);
+            this.user_nama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.user_nama.Name = "user_nama";
-            this.user_nama.Size = new System.Drawing.Size(122, 25);
+            this.user_nama.Size = new System.Drawing.Size(101, 20);
             this.user_nama.TabIndex = 0;
             this.user_nama.Text = "User_nama";
             // 
@@ -329,86 +395,21 @@
             // 
             this.status_user.AutoSize = true;
             this.status_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status_user.Location = new System.Drawing.Point(1616, 60);
+            this.status_user.Location = new System.Drawing.Point(1212, 49);
+            this.status_user.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.status_user.Name = "status_user";
-            this.status_user.Size = new System.Drawing.Size(212, 29);
+            this.status_user.Size = new System.Drawing.Size(167, 24);
             this.status_user.TabIndex = 1;
             this.status_user.Text = "Status_Karyawan";
             // 
-            // btn_tambah_user
-            // 
-            this.btn_tambah_user.Location = new System.Drawing.Point(65, 628);
-            this.btn_tambah_user.Name = "btn_tambah_user";
-            this.btn_tambah_user.Size = new System.Drawing.Size(75, 23);
-            this.btn_tambah_user.TabIndex = 1;
-            this.btn_tambah_user.Text = "Tambah";
-            this.btn_tambah_user.UseVisualStyleBackColor = true;
-            this.btn_tambah_user.Click += new System.EventHandler(this.btn_tambah_user_Click);
-            // 
-            // btn_tampil_user
-            // 
-            this.btn_tampil_user.Location = new System.Drawing.Point(207, 628);
-            this.btn_tampil_user.Name = "btn_tampil_user";
-            this.btn_tampil_user.Size = new System.Drawing.Size(75, 23);
-            this.btn_tampil_user.TabIndex = 2;
-            this.btn_tampil_user.Text = "Tampil";
-            this.btn_tampil_user.UseVisualStyleBackColor = true;
-            this.btn_tampil_user.Click += new System.EventHandler(this.btn_tampil_user_Click);
-            // 
-            // btn_update_user
-            // 
-            this.btn_update_user.Location = new System.Drawing.Point(356, 628);
-            this.btn_update_user.Name = "btn_update_user";
-            this.btn_update_user.Size = new System.Drawing.Size(75, 23);
-            this.btn_update_user.TabIndex = 3;
-            this.btn_update_user.Text = "Update";
-            this.btn_update_user.UseVisualStyleBackColor = true;
-            this.btn_update_user.Click += new System.EventHandler(this.btn_update_user_Click);
-            // 
-            // btn_delete_user
-            // 
-            this.btn_delete_user.Location = new System.Drawing.Point(515, 628);
-            this.btn_delete_user.Name = "btn_delete_user";
-            this.btn_delete_user.Size = new System.Drawing.Size(75, 23);
-            this.btn_delete_user.TabIndex = 4;
-            this.btn_delete_user.Text = "Delete";
-            this.btn_delete_user.UseVisualStyleBackColor = true;
-            // 
-            // input_search_transaksi
-            // 
-            this.input_search_transaksi.Location = new System.Drawing.Point(802, 604);
-            this.input_search_transaksi.Name = "input_search_transaksi";
-            this.input_search_transaksi.Size = new System.Drawing.Size(173, 22);
-            this.input_search_transaksi.TabIndex = 3;
-            // 
-            // btn_search_transaksi
-            // 
-            this.btn_search_transaksi.Location = new System.Drawing.Point(1016, 604);
-            this.btn_search_transaksi.Name = "btn_search_transaksi";
-            this.btn_search_transaksi.Size = new System.Drawing.Size(75, 23);
-            this.btn_search_transaksi.TabIndex = 4;
-            this.btn_search_transaksi.Text = "search";
-            this.btn_search_transaksi.UseVisualStyleBackColor = true;
-            this.btn_search_transaksi.Click += new System.EventHandler(this.btn_search_transaksi_Click);
-            // 
-            // tabLog
-            // 
-            this.tabLog.Location = new System.Drawing.Point(4, 25);
-            this.tabLog.Name = "tabLog";
-            this.tabLog.Size = new System.Drawing.Size(1877, 714);
-            this.tabLog.TabIndex = 4;
-            this.tabLog.Text = "History";
-            this.tabLog.UseVisualStyleBackColor = true;
-            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 832);
+            this.ClientSize = new System.Drawing.Size(1443, 676);
             this.Controls.Add(this.status_user);
             this.Controls.Add(this.user_nama);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.tabControl1.ResumeLayout(false);

@@ -71,6 +71,50 @@ namespace IMW_MVC.Model.Repository
             }
             return result;
         }
+        public int CreateFromAdmin(Pengguna user)
+        {
+            string strFormat = "yyyy-MM-dd";
+            string datenow = DateTime.Now.ToString(strFormat);
+            int result = 0;
+            string sql = @"insert into pengguna (nama_pengguna, katasandi, status, tanggal_buat) values (@nama_pengguna, @katasandi, @status, @tanggal_buat)";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@nama_pengguna", user.nama_pengguna);
+                cmd.Parameters.AddWithValue("@katasandi", user.katasandi);
+                cmd.Parameters.AddWithValue("@status", user.status);
+                cmd.Parameters.AddWithValue("@tanggal_buat", datenow);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+        public int UpdateFromAdmin(Pengguna user, int Pengguna_ID)
+        {
+            int result = 0;
+            string sql = @"update pengguna set nama_pengguna = @nama_pengguna, status = @status, katasandi = @katasandi where ID_pengguna = @pengguna_id";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@nama_pengguna", user.nama_pengguna);
+                cmd.Parameters.AddWithValue("@katasandi", user.katasandi);
+                cmd.Parameters.AddWithValue("@status", user.status);
+                cmd.Parameters.AddWithValue("@pengguna_id", Pengguna_ID);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
         //Login
         public bool LoginValidasi(string nama_pengguna, string password)
         {
@@ -188,6 +232,23 @@ namespace IMW_MVC.Model.Repository
                 System.Diagnostics.Debug.Print("ReadAll Eror nih: {0}", ex.Message);
             }
             return list;
+        }
+        public int DeleteUser(Pengguna pengguna)
+        {
+            int result = 0;
+            string sql = @"delete from pengguna where ID_pengguna = " + pengguna.ID_pengguna + "";
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Delete error: {0}", ex.Message);
+                }
+            }
+            return result;
         }
     }
 }

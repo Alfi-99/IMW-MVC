@@ -423,8 +423,33 @@ namespace IMW_MVC.View
             {
                 Pengguna user = listPengguna[lvu.SelectedIndices[0]];
                 AddUser AddUser = new AddUser("Update Data User", user,controller_pengguna);
-                AddUser.OnCreate += OnUpdateUserEventHandler;
+                AddUser.OnUpdate += OnUpdateUserEventHandler;
                 AddUser.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btn_delete_user_Click(object sender, EventArgs e)
+        {
+            if (lvu.SelectedItems.Count > 0)
+            {
+                var konfirmasi = MessageBox.Show("Apakah data user ingin dihapus ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (konfirmasi == DialogResult.Yes)
+                {
+                    Pengguna user = listPengguna[lvu.SelectedIndices[0]];
+                    var result = controller_pengguna.DeleteUser(user);
+                    if (result > 0)
+                    {
+                        LoadDataUser();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data Tidak Berhasil Dihapus");
+                    }
+                }
             }
             else
             {

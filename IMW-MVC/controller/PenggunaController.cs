@@ -64,7 +64,80 @@ namespace IMW_MVC.Controller
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return result;
         }
-
+        public int CreateFromAdmin(Pengguna user)
+        {
+            bool valid = DaftarValidasi(user.nama_pengguna);
+            int result = 0;
+            if (string.IsNullOrEmpty(user.nama_pengguna))
+            {
+                MessageBox.Show("Nama harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(user.katasandi))
+            {
+                MessageBox.Show("Nama harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (valid == true)
+            {
+                MessageBox.Show("Akun dengan nama berikut sudah ada !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PenggunaRepository(context);
+                result = _repository.CreateFromAdmin(user);
+            }
+            if (result > 0)
+            {
+                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return result;
+        }
+        public int UpdateFromAdmin(Pengguna user, int Pengguna_ID)
+        {
+            bool valid = DaftarValidasi(user.nama_pengguna);
+            int result = 0;
+            if (string.IsNullOrEmpty(user.nama_pengguna))
+            {
+                MessageBox.Show("Nama harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (string.IsNullOrEmpty(user.katasandi))
+            {
+                MessageBox.Show("Nama harus diisi !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            if (valid == true)
+            {
+                MessageBox.Show("Akun dengan nama berikut sudah ada !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PenggunaRepository(context);
+                result = _repository.UpdateFromAdmin(user, Pengguna_ID);
+            }
+            if (result > 0)
+            {
+                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return result;
+        }
 
 
         //Login
@@ -110,6 +183,16 @@ namespace IMW_MVC.Controller
                 list = _repository.ReadAll();
             }
             return list;
+        }
+        public int DeleteUser(Pengguna pengguna)
+        {
+            int result = 0;
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PenggunaRepository(context);
+                result = _repository.DeleteUser(pengguna);
+            }
+            return result;
         }
     }
 }
