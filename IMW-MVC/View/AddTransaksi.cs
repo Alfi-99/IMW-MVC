@@ -29,6 +29,7 @@ namespace IMW_MVC.View
         public int transaksi_ID;
         public int sisa_barang_untuk_update;
         public int jumlah_barang_transaksi;
+        public string jenis_transaksi;
         public AddTransaksi()
         {
             InitializeComponent();
@@ -54,6 +55,17 @@ namespace IMW_MVC.View
             txtJudulEntry.Text = "Update Transaksi";
             transaksi_ID = obj.Transaksi_ID;
             jumlah_barang_transaksi = obj.jumlah_barang;
+            jenis_transaksi = obj.Jenis_Transaksi;
+            if(obj.Jenis_Transaksi == "Barang Keluar")
+            {
+                barang_masuk.Visible = false;
+                barang_keluar.Visible = true;
+            }
+            if (obj.Jenis_Transaksi == "Barang Masuk")
+            {
+                barang_masuk.Visible = true;
+                barang_keluar.Visible = false;
+            }
             listbarangcomboboxupdate = controllerCombo.ReadProdukForComboBoxByNama(obj.Nama_barang);
             jml_input.Text = obj.jumlah_barang.ToString();
             foreach (var brg in listbarangcomboboxupdate)
@@ -127,7 +139,7 @@ namespace IMW_MVC.View
             transaksi.Jenis_Transaksi = "Barang Masuk";
             listfillform = controllerCombo.ReadForFillForm(item_id);
             int jumlah_barang = int.Parse(sisa_barang.Text) + transaksi.jumlah_barang;
-            int jumlah_barang_update = int.Parse(sisa_barang.Text) + jumlah_barang_transaksi + transaksi.jumlah_barang;
+            int jumlah_barang_update = int.Parse(sisa_barang.Text) - jumlah_barang_transaksi + transaksi.jumlah_barang;
             int result = 0;
             int id_pengguna = controller.PenggunaID(nama_pengguna);
             if (isNewData)
