@@ -44,6 +44,13 @@ namespace IMW_MVC.View
             LoadDataGudang();
             LoadDataUser();
         }
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            Login login = new Login();
+            login.ShowDialog();
+        }
         //Checking Status User
         private void user()
         {
@@ -69,13 +76,14 @@ namespace IMW_MVC.View
             lvt.Columns.Add("No", 50, HorizontalAlignment.Left);
             lvt.Columns.Add("ID Transaksi", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Nama Barang", 150, HorizontalAlignment.Left);
-            lvt.Columns.Add("Tanggal Masuk", 150, HorizontalAlignment.Left);
+            lvt.Columns.Add("Tanggal", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Deskripsi", 290, HorizontalAlignment.Left);
             lvt.Columns.Add("Jumlah Barang", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Harga Barang", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Gudang", 150, HorizontalAlignment.Left);
             lvt.Columns.Add("Alamat", 210, HorizontalAlignment.Left);
             lvt.Columns.Add("User", 150, HorizontalAlignment.Left);
+            lvt.Columns.Add("Status Barang", 150, HorizontalAlignment.Left);
         }
         private void LoadDataTransaksi()
         {
@@ -94,6 +102,7 @@ namespace IMW_MVC.View
                 item.SubItems.Add(trs.Gudang);
                 item.SubItems.Add(trs.Alamat);
                 item.SubItems.Add(trs.User);
+                item.SubItems.Add(trs.Jenis_Transaksi);
                 lvt.Items.Add(item);
             }
         }
@@ -159,7 +168,7 @@ namespace IMW_MVC.View
             lvt.Items.Clear();
             string input_search = input_search_transaksi.Text;
             listTransaksiBySearch = controller.SearchDataTransaksi(input_search);
-            MessageBox.Show(input_search);
+            //MessageBox.Show(input_search);
             foreach (var trs in listTransaksiBySearch)
             {
                 var noUrut = lvt.Items.Count + 1;
@@ -190,8 +199,6 @@ namespace IMW_MVC.View
 
             lvp.Columns.Add("No", 50, HorizontalAlignment.Left);
             lvp.Columns.Add("Nama Barang", 150, HorizontalAlignment.Left);
-            lvp.Columns.Add("Tanggal Masuk", 150, HorizontalAlignment.Left);
-            lvp.Columns.Add("Tanggal Keluar", 150, HorizontalAlignment.Left);
             lvp.Columns.Add("Deskripsi", 280, HorizontalAlignment.Left);
             lvp.Columns.Add("Harga Barang", 150, HorizontalAlignment.Left);
             lvp.Columns.Add("Jumlah Barang", 150, HorizontalAlignment.Left);
@@ -211,8 +218,6 @@ namespace IMW_MVC.View
                 var noUrut = lvp.Items.Count + 1;
                 var item = new ListViewItem(noUrut.ToString());
                 item.SubItems.Add(trs.Nama_Barang);
-                item.SubItems.Add(trs.Tanggal_Masuk);
-                item.SubItems.Add(trs.Tanggal_Keluar);
                 item.SubItems.Add(trs.Deskripsi);
                 item.SubItems.Add(trs.Harga.ToString());
                 item.SubItems.Add(trs.Jumlah_Barang.ToString());

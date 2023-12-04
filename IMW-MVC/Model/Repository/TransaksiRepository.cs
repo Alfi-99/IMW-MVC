@@ -42,6 +42,7 @@ namespace IMW_MVC.Model.Repository
                             trs.Gudang = reader["Nama_Gudang"].ToString();
                             trs.Alamat = reader["Alamat"].ToString();
                             trs.User = reader["nama_pengguna"].ToString();
+                            trs.Jenis_Transaksi = reader["Jenis_Transaksi"].ToString();
                             list.Add(trs);
                         }
                     }

@@ -126,8 +126,8 @@ namespace IMW_MVC.View
             transaksi.jumlah_barang = int.Parse(jml_input.Text);
             transaksi.Jenis_Transaksi = "Barang Masuk";
             listfillform = controllerCombo.ReadForFillForm(item_id);
-            int jumlah_barang = int.Parse(sisa_barang.Text) - transaksi.jumlah_barang;
-            int jumlah_barang_update = int.Parse(sisa_barang.Text) + jumlah_barang_transaksi - transaksi.jumlah_barang;
+            int jumlah_barang = int.Parse(sisa_barang.Text) + transaksi.jumlah_barang;
+            int jumlah_barang_update = int.Parse(sisa_barang.Text) + jumlah_barang_transaksi + transaksi.jumlah_barang;
             int result = 0;
             int id_pengguna = controller.PenggunaID(nama_pengguna);
             if (isNewData)
