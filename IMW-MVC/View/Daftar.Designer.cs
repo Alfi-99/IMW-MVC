@@ -28,191 +28,231 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_retype_daftar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_pass_daftar = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daftar));
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btn_kembali = new System.Windows.Forms.Button();
-            this.btn_daftar = new System.Windows.Forms.Button();
-            this.txt_user_daftar = new System.Windows.Forms.TextBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.txt_pass_daftar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_daftar = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_kembali = new Guna.UI2.WinForms.Guna2Button();
+            this.txt_retype_daftar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_user_daftar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label3.Location = new System.Drawing.Point(92, 333);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 20);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Retype Password";
-            // 
-            // txt_retype_daftar
-            // 
-            this.txt_retype_daftar.Location = new System.Drawing.Point(91, 354);
-            this.txt_retype_daftar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_retype_daftar.Multiline = true;
-            this.txt_retype_daftar.Name = "txt_retype_daftar";
-            this.txt_retype_daftar.PasswordChar = '*';
-            this.txt_retype_daftar.Size = new System.Drawing.Size(307, 36);
-            this.txt_retype_daftar.TabIndex = 28;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(92, 262);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Password";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label1.Location = new System.Drawing.Point(88, 193);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Username";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(102, 114);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(294, 38);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "System Management";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label5.Location = new System.Drawing.Point(160, 73);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 38);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Warehouse\r\n";
-            // 
-            // txt_pass_daftar
-            // 
-            this.txt_pass_daftar.Location = new System.Drawing.Point(91, 283);
-            this.txt_pass_daftar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_pass_daftar.Multiline = true;
-            this.txt_pass_daftar.Name = "txt_pass_daftar";
-            this.txt_pass_daftar.PasswordChar = '*';
-            this.txt_pass_daftar.Size = new System.Drawing.Size(307, 36);
-            this.txt_pass_daftar.TabIndex = 23;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.checkBox1.Location = new System.Drawing.Point(257, 398);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(484, 318);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(140, 24);
+            this.checkBox1.Size = new System.Drawing.Size(145, 25);
             this.checkBox1.TabIndex = 22;
             this.checkBox1.Text = "Show Password";
             this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // btn_kembali
+            // guna2Elipse1
             // 
-            this.btn_kembali.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_kembali.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_kembali.ForeColor = System.Drawing.Color.White;
-            this.btn_kembali.Location = new System.Drawing.Point(91, 521);
-            this.btn_kembali.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_kembali.Name = "btn_kembali";
-            this.btn_kembali.Size = new System.Drawing.Size(308, 37);
-            this.btn_kembali.TabIndex = 21;
-            this.btn_kembali.Text = "Kembali";
-            this.btn_kembali.UseVisualStyleBackColor = false;
-            this.btn_kembali.Click += new System.EventHandler(this.btn_kembali_Click);
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-25, -21);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(435, 528);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 29;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(15, 15);
+            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(10, 10);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(739, 12);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(10, 10);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(57, 40);
+            this.guna2ImageButton1.TabIndex = 30;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            // 
+            // txt_pass_daftar
+            // 
+            this.txt_pass_daftar.BorderRadius = 15;
+            this.txt_pass_daftar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_pass_daftar.DefaultText = "";
+            this.txt_pass_daftar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_pass_daftar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_pass_daftar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_pass_daftar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_pass_daftar.FillColor = System.Drawing.Color.Gainsboro;
+            this.txt_pass_daftar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_pass_daftar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_pass_daftar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_pass_daftar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_pass_daftar.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_pass_daftar.IconLeft")));
+            this.txt_pass_daftar.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txt_pass_daftar.Location = new System.Drawing.Point(379, 208);
+            this.txt_pass_daftar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_pass_daftar.Multiline = true;
+            this.txt_pass_daftar.Name = "txt_pass_daftar";
+            this.txt_pass_daftar.PasswordChar = '*';
+            this.txt_pass_daftar.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_pass_daftar.PlaceholderText = "Password";
+            this.txt_pass_daftar.SelectedText = "";
+            this.txt_pass_daftar.Size = new System.Drawing.Size(250, 42);
+            this.txt_pass_daftar.TabIndex = 39;
             // 
             // btn_daftar
             // 
-            this.btn_daftar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_daftar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_daftar.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_daftar.ForeColor = System.Drawing.Color.White;
-            this.btn_daftar.Location = new System.Drawing.Point(91, 465);
-            this.btn_daftar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_daftar.BorderRadius = 15;
+            this.btn_daftar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_daftar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_daftar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_daftar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_daftar.FillColor = System.Drawing.Color.White;
+            this.btn_daftar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_daftar.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_daftar.Location = new System.Drawing.Point(379, 376);
             this.btn_daftar.Name = "btn_daftar";
-            this.btn_daftar.Size = new System.Drawing.Size(308, 37);
-            this.btn_daftar.TabIndex = 20;
+            this.btn_daftar.Size = new System.Drawing.Size(110, 34);
+            this.btn_daftar.TabIndex = 38;
             this.btn_daftar.Text = "Daftar";
-            this.btn_daftar.UseVisualStyleBackColor = false;
-            this.btn_daftar.Click += new System.EventHandler(this.btn_daftar_Click);
+            this.btn_daftar.Click += new System.EventHandler(this.btn_daftar_Click_1);
+            // 
+            // btn_kembali
+            // 
+            this.btn_kembali.BorderRadius = 15;
+            this.btn_kembali.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_kembali.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_kembali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_kembali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_kembali.FillColor = System.Drawing.Color.White;
+            this.btn_kembali.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_kembali.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_kembali.Location = new System.Drawing.Point(519, 376);
+            this.btn_kembali.Name = "btn_kembali";
+            this.btn_kembali.Size = new System.Drawing.Size(110, 34);
+            this.btn_kembali.TabIndex = 37;
+            this.btn_kembali.Text = "Kembali";
+            this.btn_kembali.Click += new System.EventHandler(this.btn_kembali_Click_1);
+            // 
+            // txt_retype_daftar
+            // 
+            this.txt_retype_daftar.BorderRadius = 15;
+            this.txt_retype_daftar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_retype_daftar.DefaultText = "";
+            this.txt_retype_daftar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_retype_daftar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_retype_daftar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_retype_daftar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_retype_daftar.FillColor = System.Drawing.Color.Gainsboro;
+            this.txt_retype_daftar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_retype_daftar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_retype_daftar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_retype_daftar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_retype_daftar.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_retype_daftar.IconLeft")));
+            this.txt_retype_daftar.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txt_retype_daftar.Location = new System.Drawing.Point(379, 268);
+            this.txt_retype_daftar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_retype_daftar.Multiline = true;
+            this.txt_retype_daftar.Name = "txt_retype_daftar";
+            this.txt_retype_daftar.PasswordChar = '*';
+            this.txt_retype_daftar.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_retype_daftar.PlaceholderText = "Retype Password";
+            this.txt_retype_daftar.SelectedText = "";
+            this.txt_retype_daftar.Size = new System.Drawing.Size(250, 42);
+            this.txt_retype_daftar.TabIndex = 36;
             // 
             // txt_user_daftar
             // 
-            this.txt_user_daftar.Location = new System.Drawing.Point(91, 214);
-            this.txt_user_daftar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_user_daftar.Multiline = true;
+            this.txt_user_daftar.BorderRadius = 15;
+            this.txt_user_daftar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_user_daftar.DefaultText = "";
+            this.txt_user_daftar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_user_daftar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_user_daftar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_user_daftar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_user_daftar.FillColor = System.Drawing.Color.Gainsboro;
+            this.txt_user_daftar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_user_daftar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_user_daftar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_user_daftar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_user_daftar.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_user_daftar.IconLeft")));
+            this.txt_user_daftar.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txt_user_daftar.Location = new System.Drawing.Point(379, 146);
+            this.txt_user_daftar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_user_daftar.Name = "txt_user_daftar";
-            this.txt_user_daftar.Size = new System.Drawing.Size(307, 36);
-            this.txt_user_daftar.TabIndex = 19;
+            this.txt_user_daftar.PasswordChar = '\0';
+            this.txt_user_daftar.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_user_daftar.PlaceholderText = "Username";
+            this.txt_user_daftar.SelectedText = "";
+            this.txt_user_daftar.Size = new System.Drawing.Size(250, 42);
+            this.txt_user_daftar.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(341, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(328, 82);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "WAREHOUSE SYSTEM\r\nMANAGEMENT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Daftar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 630);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_retype_daftar);
-            this.Controls.Add(this.label2);
+            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_pass_daftar);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.btn_kembali);
             this.Controls.Add(this.btn_daftar);
+            this.Controls.Add(this.btn_kembali);
+            this.Controls.Add(this.txt_retype_daftar);
             this.Controls.Add(this.txt_user_daftar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.guna2ImageButton1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.guna2PictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Daftar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Daftar";
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_retype_daftar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_pass_daftar;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button btn_kembali;
-        private System.Windows.Forms.Button btn_daftar;
-        private System.Windows.Forms.TextBox txt_user_daftar;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox txt_pass_daftar;
+        private Guna.UI2.WinForms.Guna2Button btn_daftar;
+        private Guna.UI2.WinForms.Guna2Button btn_kembali;
+        private Guna.UI2.WinForms.Guna2TextBox txt_retype_daftar;
+        private Guna.UI2.WinForms.Guna2TextBox txt_user_daftar;
     }
 }

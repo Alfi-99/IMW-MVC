@@ -56,11 +56,11 @@ namespace IMW_MVC.Controller
             }
             if (result > 0)
             {
-                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBox.Show("Data Pengguna berhasil disimpan !", "Informasi",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBox.Show("Data Pengguna gagal disimpan !!!", "Peringatan",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return result;
         }
@@ -93,11 +93,11 @@ namespace IMW_MVC.Controller
             }
             if (result > 0)
             {
-                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBox.Show("Data Pengguna berhasil disimpan !", "Informasi",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBox.Show("Data Pengguna gagal disimpan !!!", "Peringatan",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return result;
         }
@@ -130,11 +130,11 @@ namespace IMW_MVC.Controller
             }
             if (result > 0)
             {
-                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBox.Show("Data Pengguna berhasil disimpan !", "Informasi",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBox.Show("Data Pengguna gagal disimpan !!!", "Peringatan",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return result;
         }
