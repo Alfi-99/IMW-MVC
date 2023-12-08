@@ -63,7 +63,7 @@
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(190, 50);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(168, 50);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(88, 88);
@@ -135,6 +135,9 @@
             this.select_status.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.select_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.select_status.ItemHeight = 30;
+            this.select_status.Items.AddRange(new object[] {
+            "Karyawan",
+            "User"});
             this.select_status.Location = new System.Drawing.Point(99, 350);
             this.select_status.Name = "select_status";
             this.select_status.Size = new System.Drawing.Size(250, 36);
@@ -156,7 +159,7 @@
             this.txtJudulEntry.AutoSize = true;
             this.txtJudulEntry.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
             this.txtJudulEntry.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtJudulEntry.Location = new System.Drawing.Point(175, 164);
+            this.txtJudulEntry.Location = new System.Drawing.Point(164, 163);
             this.txtJudulEntry.Name = "txtJudulEntry";
             this.txtJudulEntry.Size = new System.Drawing.Size(103, 21);
             this.txtJudulEntry.TabIndex = 62;
@@ -164,13 +167,13 @@
             // 
             // tambah_user
             // 
-            this.tambah_user.BorderRadius = 20;
+            this.tambah_user.BorderRadius = 15;
             this.tambah_user.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.tambah_user.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.tambah_user.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.tambah_user.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.tambah_user.FillColor = System.Drawing.Color.DodgerBlue;
-            this.tambah_user.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tambah_user.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
             this.tambah_user.ForeColor = System.Drawing.Color.White;
             this.tambah_user.Location = new System.Drawing.Point(145, 411);
             this.tambah_user.Name = "tambah_user";
@@ -214,6 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUser";
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
