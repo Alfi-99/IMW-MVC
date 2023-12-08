@@ -48,6 +48,8 @@ namespace IMW_MVC.View
             txtJudulEntry.Text = "Update Pengguna";
         }
 
+        
+
         private void tambah_user_Click(object sender, EventArgs e)
         {
             if (isNewData) pengguna = new Pengguna();
@@ -74,6 +76,11 @@ namespace IMW_MVC.View
                 }
 
             }
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
