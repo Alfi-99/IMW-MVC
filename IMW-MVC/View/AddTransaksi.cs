@@ -118,7 +118,7 @@ namespace IMW_MVC.View
             {
                 result = controller.UpdateTransaksi(transaksi, transaksi_ID);
                 controller.UpdateJumlahProduk(transaksi, jumlah_barang_update);
-                if(result > 0)
+                if (result > 0)
                 {
                     OnUpdate(transaksi);
                     this.Close();
@@ -178,5 +178,12 @@ namespace IMW_MVC.View
                 sisa_barang.Text = prdk.Jumlah_Barang.ToString();
             }
         }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        
     }
 }
