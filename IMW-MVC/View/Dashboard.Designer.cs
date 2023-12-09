@@ -58,7 +58,7 @@
             this.tabLog = new System.Windows.Forms.TabPage();
             this.user_nama = new System.Windows.Forms.Label();
             this.status_user = new System.Windows.Forms.Label();
-            this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_logout = new Guna.UI2.WinForms.Guna2Button();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -86,9 +86,9 @@
             this.TabTransaksi.Controls.Add(this.input_search_transaksi);
             this.TabTransaksi.Controls.Add(this.btn_delete_transaksi);
             this.TabTransaksi.Controls.Add(this.btn_update_transaksi);
+            this.TabTransaksi.Controls.Add(this.btn_tambah_transaksi);
             this.TabTransaksi.Controls.Add(this.lvt);
             this.TabTransaksi.Controls.Add(this.btn_tampil_transaksi);
-            this.TabTransaksi.Controls.Add(this.btn_tambah_transaksi);
             this.TabTransaksi.Location = new System.Drawing.Point(4, 25);
             this.TabTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabTransaksi.Name = "TabTransaksi";
@@ -120,7 +120,7 @@
             // btn_delete_transaksi
             // 
             this.btn_delete_transaksi.Location = new System.Drawing.Point(616, 601);
-            this.btn_delete_transaksi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_delete_transaksi.Margin = new System.Windows.Forms.Padding(4);
             this.btn_delete_transaksi.Name = "btn_delete_transaksi";
             this.btn_delete_transaksi.Size = new System.Drawing.Size(100, 28);
             this.btn_delete_transaksi.TabIndex = 1;
@@ -131,7 +131,7 @@
             // btn_update_transaksi
             // 
             this.btn_update_transaksi.Location = new System.Drawing.Point(472, 601);
-            this.btn_update_transaksi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_update_transaksi.Margin = new System.Windows.Forms.Padding(4);
             this.btn_update_transaksi.Name = "btn_update_transaksi";
             this.btn_update_transaksi.Size = new System.Drawing.Size(100, 28);
             this.btn_update_transaksi.TabIndex = 2;
@@ -162,7 +162,7 @@
             // 
             // btn_tambah_transaksi
             // 
-            this.btn_tambah_transaksi.Location = new System.Drawing.Point(19, 601);
+            this.btn_tambah_transaksi.Location = new System.Drawing.Point(42, 601);
             this.btn_tambah_transaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
             this.btn_tambah_transaksi.Size = new System.Drawing.Size(132, 23);
@@ -182,7 +182,7 @@
             this.TabProduk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabProduk.Name = "TabProduk";
             this.TabProduk.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabProduk.Size = new System.Drawing.Size(1877, 714);
+            this.TabProduk.Size = new System.Drawing.Size(1776, 701);
             this.TabProduk.TabIndex = 1;
             this.TabProduk.Text = "Produk";
             this.TabProduk.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             // 
             this.lvp.HideSelection = false;
             this.lvp.Location = new System.Drawing.Point(0, 0);
-            this.lvp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvp.Margin = new System.Windows.Forms.Padding(4);
             this.lvp.Name = "lvp";
             this.lvp.Size = new System.Drawing.Size(1900, 570);
             this.lvp.TabIndex = 0;
@@ -251,7 +251,7 @@
             this.TabGudang.Location = new System.Drawing.Point(4, 25);
             this.TabGudang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabGudang.Name = "TabGudang";
-            this.TabGudang.Size = new System.Drawing.Size(1877, 714);
+            this.TabGudang.Size = new System.Drawing.Size(1776, 701);
             this.TabGudang.TabIndex = 2;
             this.TabGudang.Text = "Gudang";
             this.TabGudang.UseVisualStyleBackColor = true;
@@ -259,7 +259,7 @@
             // btn_tambah_gudang
             // 
             this.btn_tambah_gudang.Location = new System.Drawing.Point(55, 615);
-            this.btn_tambah_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_tambah_gudang.Margin = new System.Windows.Forms.Padding(4);
             this.btn_tambah_gudang.Name = "btn_tambah_gudang";
             this.btn_tambah_gudang.Size = new System.Drawing.Size(100, 28);
             this.btn_tambah_gudang.TabIndex = 4;
@@ -270,7 +270,7 @@
             // btn_tampil_gudang
             // 
             this.btn_tampil_gudang.Location = new System.Drawing.Point(228, 615);
-            this.btn_tampil_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_tampil_gudang.Margin = new System.Windows.Forms.Padding(4);
             this.btn_tampil_gudang.Name = "btn_tampil_gudang";
             this.btn_tampil_gudang.Size = new System.Drawing.Size(100, 28);
             this.btn_tampil_gudang.TabIndex = 3;
@@ -281,7 +281,7 @@
             // btn_update_gudang
             // 
             this.btn_update_gudang.Location = new System.Drawing.Point(396, 615);
-            this.btn_update_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_update_gudang.Margin = new System.Windows.Forms.Padding(4);
             this.btn_update_gudang.Name = "btn_update_gudang";
             this.btn_update_gudang.Size = new System.Drawing.Size(100, 28);
             this.btn_update_gudang.TabIndex = 2;
@@ -292,7 +292,7 @@
             // btn_delete_gudang
             // 
             this.btn_delete_gudang.Location = new System.Drawing.Point(565, 615);
-            this.btn_delete_gudang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_delete_gudang.Margin = new System.Windows.Forms.Padding(4);
             this.btn_delete_gudang.Name = "btn_delete_gudang";
             this.btn_delete_gudang.Size = new System.Drawing.Size(100, 28);
             this.btn_delete_gudang.TabIndex = 1;
@@ -320,7 +320,7 @@
             this.TabUser.Location = new System.Drawing.Point(4, 25);
             this.TabUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabUser.Name = "TabUser";
-            this.TabUser.Size = new System.Drawing.Size(1877, 714);
+            this.TabUser.Size = new System.Drawing.Size(1776, 701);
             this.TabUser.TabIndex = 3;
             this.TabUser.Text = "User";
             this.TabUser.UseVisualStyleBackColor = true;
@@ -373,7 +373,7 @@
             // 
             this.lvu.HideSelection = false;
             this.lvu.Location = new System.Drawing.Point(0, 0);
-            this.lvu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvu.Margin = new System.Windows.Forms.Padding(4);
             this.lvu.Name = "lvu";
             this.lvu.Size = new System.Drawing.Size(1879, 581);
             this.lvu.TabIndex = 0;
@@ -384,7 +384,7 @@
             this.tabLog.Location = new System.Drawing.Point(4, 25);
             this.tabLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabLog.Name = "tabLog";
-            this.tabLog.Size = new System.Drawing.Size(1877, 714);
+            this.tabLog.Size = new System.Drawing.Size(1776, 701);
             this.tabLog.TabIndex = 4;
             this.tabLog.Text = "History";
             this.tabLog.UseVisualStyleBackColor = true;
@@ -411,26 +411,35 @@
             // 
             // btn_logout
             // 
-            this.btn_logout.Location = new System.Drawing.Point(726, 33);
+            this.btn_logout.BorderRadius = 15;
+            this.btn_logout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_logout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_logout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_logout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_logout.FillColor = System.Drawing.Color.White;
+            this.btn_logout.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_logout.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_logout.Location = new System.Drawing.Point(1463, 33);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(75, 23);
-            this.btn_logout.TabIndex = 2;
-            this.btn_logout.Text = "Log Out";
-            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Size = new System.Drawing.Size(100, 34);
+            this.btn_logout.TabIndex = 30;
+            this.btn_logout.Text = "Logout";
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1924, 819);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.status_user);
             this.Controls.Add(this.user_nama);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.TabTransaksi.ResumeLayout(false);
             this.TabTransaksi.PerformLayout();
@@ -474,6 +483,6 @@
         private System.Windows.Forms.Button btn_search_transaksi;
         private System.Windows.Forms.TextBox input_search_transaksi;
         private System.Windows.Forms.TabPage tabLog;
-        private System.Windows.Forms.Button btn_logout;
+        private Guna.UI2.WinForms.Guna2Button btn_logout;
     }
 }
