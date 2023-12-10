@@ -53,8 +53,8 @@ namespace IMW_MVC.View
             isNewData = false;
             produk = obj;
             txtJudulEntry.Text = "Update Transaksi";
+            btn_tambah_barang.Text = "Update";
             Product_ID = obj.Product_ID;
-            MessageBox.Show(Product_ID.ToString());
             listgudangcomboboxupdate = controller.ReadGudangBasedOnGudangID(obj.Nama_Gudang);
             input_nama.Text = obj.Nama_Barang;
             input_deskripsi.Text = obj.Deskripsi;

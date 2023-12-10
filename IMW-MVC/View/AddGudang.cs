@@ -43,6 +43,7 @@ namespace IMW_MVC.View
             isNewData = false;
             gudang = obj;
             txtJudulEntry.Text = "Update Gudang";
+            btn_tambah_gudang.Text = "Update";
             Gudang_ID = obj.Gudang_ID;
             input_nama_gudang.Text = obj.Nama_Gudang;
             input_alamat_gudang.Text = obj.Alamat;

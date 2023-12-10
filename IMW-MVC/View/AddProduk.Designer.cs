@@ -213,6 +213,7 @@
             this.select_gudang.Name = "select_gudang";
             this.select_gudang.Size = new System.Drawing.Size(325, 36);
             this.select_gudang.TabIndex = 67;
+            this.select_gudang.SelectedIndexChanged += new System.EventHandler(this.select_gudang_SelectedIndexChanged);
             // 
             // input_nama
             // 
