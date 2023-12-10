@@ -45,8 +45,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(91, 306);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -57,8 +58,9 @@
             // harga_input
             // 
             this.harga_input.AutoSize = true;
+            this.harga_input.BackColor = System.Drawing.Color.Transparent;
             this.harga_input.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.harga_input.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.harga_input.ForeColor = System.Drawing.Color.Black;
             this.harga_input.Location = new System.Drawing.Point(91, 241);
             this.harga_input.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.harga_input.Name = "harga_input";
@@ -69,8 +71,9 @@
             // txtJudulEntry
             // 
             this.txtJudulEntry.AutoSize = true;
+            this.txtJudulEntry.BackColor = System.Drawing.Color.Transparent;
             this.txtJudulEntry.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold);
-            this.txtJudulEntry.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtJudulEntry.ForeColor = System.Drawing.Color.Black;
             this.txtJudulEntry.Location = new System.Drawing.Point(151, 118);
             this.txtJudulEntry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtJudulEntry.Name = "txtJudulEntry";
@@ -81,8 +84,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(91, 176);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -92,6 +96,7 @@
             // 
             // btn_tambah_gudang
             // 
+            this.btn_tambah_gudang.BackColor = System.Drawing.Color.Transparent;
             this.btn_tambah_gudang.BorderRadius = 15;
             this.btn_tambah_gudang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_tambah_gudang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -131,6 +136,7 @@
             // 
             // input_nama_gudang
             // 
+            this.input_nama_gudang.BackColor = System.Drawing.Color.Transparent;
             this.input_nama_gudang.BorderRadius = 10;
             this.input_nama_gudang.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_nama_gudang.DefaultText = "";
@@ -152,6 +158,7 @@
             // 
             // input_alamat_gudang
             // 
+            this.input_alamat_gudang.BackColor = System.Drawing.Color.Transparent;
             this.input_alamat_gudang.BorderRadius = 10;
             this.input_alamat_gudang.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_alamat_gudang.DefaultText = "";
@@ -173,6 +180,7 @@
             // 
             // input_kapasitas_gudang
             // 
+            this.input_kapasitas_gudang.BackColor = System.Drawing.Color.Transparent;
             this.input_kapasitas_gudang.BorderRadius = 10;
             this.input_kapasitas_gudang.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_kapasitas_gudang.DefaultText = "";
@@ -196,6 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(482, 553);
             this.Controls.Add(this.input_kapasitas_gudang);
             this.Controls.Add(this.input_alamat_gudang);

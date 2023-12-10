@@ -61,9 +61,10 @@
             // 
             // guna2CirclePictureBox1
             // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(168, 50);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(190, 51);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(88, 88);
@@ -73,6 +74,7 @@
             // 
             // password_input
             // 
+            this.password_input.BackColor = System.Drawing.Color.Transparent;
             this.password_input.BorderRadius = 15;
             this.password_input.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.password_input.DefaultText = "";
@@ -100,6 +102,7 @@
             // 
             // username_input
             // 
+            this.username_input.BackColor = System.Drawing.Color.Transparent;
             this.username_input.BorderRadius = 15;
             this.username_input.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.username_input.DefaultText = "";
@@ -146,6 +149,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label1.Location = new System.Drawing.Point(99, 328);
@@ -157,9 +161,10 @@
             // txtJudulEntry
             // 
             this.txtJudulEntry.AutoSize = true;
+            this.txtJudulEntry.BackColor = System.Drawing.Color.Transparent;
             this.txtJudulEntry.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
             this.txtJudulEntry.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtJudulEntry.Location = new System.Drawing.Point(164, 163);
+            this.txtJudulEntry.Location = new System.Drawing.Point(175, 163);
             this.txtJudulEntry.Name = "txtJudulEntry";
             this.txtJudulEntry.Size = new System.Drawing.Size(103, 21);
             this.txtJudulEntry.TabIndex = 62;
@@ -167,6 +172,7 @@
             // 
             // tambah_user
             // 
+            this.tambah_user.BackColor = System.Drawing.Color.Transparent;
             this.tambah_user.BorderRadius = 15;
             this.tambah_user.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.tambah_user.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -204,6 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(450, 550);
             this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.tambah_user);

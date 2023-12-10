@@ -54,8 +54,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(90, 300);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -77,8 +78,9 @@
             // harga_input
             // 
             this.harga_input.AutoSize = true;
+            this.harga_input.BackColor = System.Drawing.Color.Transparent;
             this.harga_input.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.harga_input.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.harga_input.ForeColor = System.Drawing.Color.Black;
             this.harga_input.Location = new System.Drawing.Point(90, 430);
             this.harga_input.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.harga_input.Name = "harga_input";
@@ -89,8 +91,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(90, 365);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -101,8 +104,9 @@
             // txtJudulEntry
             // 
             this.txtJudulEntry.AutoSize = true;
+            this.txtJudulEntry.BackColor = System.Drawing.Color.Transparent;
             this.txtJudulEntry.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold);
-            this.txtJudulEntry.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtJudulEntry.ForeColor = System.Drawing.Color.Black;
             this.txtJudulEntry.Location = new System.Drawing.Point(148, 79);
             this.txtJudulEntry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtJudulEntry.Name = "txtJudulEntry";
@@ -113,8 +117,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(90, 235);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -125,8 +130,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(90, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -137,8 +143,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(90, 495);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -149,8 +156,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.2F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(90, 560);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -160,6 +168,7 @@
             // 
             // btn_tambah_barang
             // 
+            this.btn_tambah_barang.BackColor = System.Drawing.Color.Transparent;
             this.btn_tambah_barang.BorderRadius = 15;
             this.btn_tambah_barang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_tambah_barang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -217,6 +226,7 @@
             // 
             // input_nama
             // 
+            this.input_nama.BackColor = System.Drawing.Color.Transparent;
             this.input_nama.BorderRadius = 10;
             this.input_nama.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_nama.DefaultText = "";
@@ -238,6 +248,7 @@
             // 
             // input_jml
             // 
+            this.input_jml.BackColor = System.Drawing.Color.Transparent;
             this.input_jml.BorderRadius = 10;
             this.input_jml.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_jml.DefaultText = "";
@@ -259,6 +270,7 @@
             // 
             // input_lokasi
             // 
+            this.input_lokasi.BackColor = System.Drawing.Color.Transparent;
             this.input_lokasi.BorderRadius = 10;
             this.input_lokasi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_lokasi.DefaultText = "";
@@ -280,6 +292,7 @@
             // 
             // input_kapasitas
             // 
+            this.input_kapasitas.BackColor = System.Drawing.Color.Transparent;
             this.input_kapasitas.BorderRadius = 10;
             this.input_kapasitas.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_kapasitas.DefaultText = "";
@@ -301,6 +314,7 @@
             // 
             // input_harga
             // 
+            this.input_harga.BackColor = System.Drawing.Color.Transparent;
             this.input_harga.BorderRadius = 10;
             this.input_harga.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_harga.DefaultText = "";
@@ -322,6 +336,7 @@
             // 
             // input_deskripsi
             // 
+            this.input_deskripsi.BackColor = System.Drawing.Color.Transparent;
             this.input_deskripsi.BorderRadius = 10;
             this.input_deskripsi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.input_deskripsi.DefaultText = "";
@@ -345,6 +360,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(482, 753);
             this.Controls.Add(this.input_deskripsi);
             this.Controls.Add(this.input_harga);
