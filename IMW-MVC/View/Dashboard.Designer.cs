@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabTransaksi = new System.Windows.Forms.TabPage();
-            this.btn_search_transaksi = new System.Windows.Forms.Button();
-            this.input_search_transaksi = new System.Windows.Forms.TextBox();
-            this.btn_delete_transaksi = new System.Windows.Forms.Button();
-            this.btn_update_transaksi = new System.Windows.Forms.Button();
             this.lvt = new System.Windows.Forms.ListView();
-            this.btn_tampil_transaksi = new System.Windows.Forms.Button();
-            this.btn_tambah_transaksi = new System.Windows.Forms.Button();
             this.TabProduk = new System.Windows.Forms.TabPage();
             this.btn_update_produk = new System.Windows.Forms.Button();
             this.btn_delete_produk = new System.Windows.Forms.Button();
@@ -59,6 +54,12 @@
             this.user_nama = new System.Windows.Forms.Label();
             this.status_user = new System.Windows.Forms.Label();
             this.btn_logout = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_tambah_transaksi = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_tampil_transaksi = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_update_transaksi = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_delete_transaksi = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_search_transaksi = new Guna.UI2.WinForms.Guna2Button();
+            this.input_search_transaksi = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabControl1.SuspendLayout();
             this.TabTransaksi.SuspendLayout();
             this.TabProduk.SuspendLayout();
@@ -77,67 +78,20 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1784, 730);
+            this.tabControl1.Size = new System.Drawing.Size(1784, 521);
             this.tabControl1.TabIndex = 0;
             // 
             // TabTransaksi
             // 
-            this.TabTransaksi.Controls.Add(this.btn_search_transaksi);
-            this.TabTransaksi.Controls.Add(this.input_search_transaksi);
-            this.TabTransaksi.Controls.Add(this.btn_delete_transaksi);
-            this.TabTransaksi.Controls.Add(this.btn_update_transaksi);
-            this.TabTransaksi.Controls.Add(this.btn_tambah_transaksi);
             this.TabTransaksi.Controls.Add(this.lvt);
-            this.TabTransaksi.Controls.Add(this.btn_tampil_transaksi);
             this.TabTransaksi.Location = new System.Drawing.Point(4, 25);
             this.TabTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabTransaksi.Name = "TabTransaksi";
             this.TabTransaksi.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabTransaksi.Size = new System.Drawing.Size(1776, 701);
+            this.TabTransaksi.Size = new System.Drawing.Size(1776, 492);
             this.TabTransaksi.TabIndex = 0;
             this.TabTransaksi.Text = "Transaksi";
             this.TabTransaksi.UseVisualStyleBackColor = true;
-            // 
-            // btn_search_transaksi
-            // 
-            this.btn_search_transaksi.Location = new System.Drawing.Point(1016, 604);
-            this.btn_search_transaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_search_transaksi.Name = "btn_search_transaksi";
-            this.btn_search_transaksi.Size = new System.Drawing.Size(75, 23);
-            this.btn_search_transaksi.TabIndex = 4;
-            this.btn_search_transaksi.Text = "search";
-            this.btn_search_transaksi.UseVisualStyleBackColor = true;
-            this.btn_search_transaksi.Click += new System.EventHandler(this.btn_search_transaksi_Click);
-            // 
-            // input_search_transaksi
-            // 
-            this.input_search_transaksi.Location = new System.Drawing.Point(803, 604);
-            this.input_search_transaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.input_search_transaksi.Name = "input_search_transaksi";
-            this.input_search_transaksi.Size = new System.Drawing.Size(173, 22);
-            this.input_search_transaksi.TabIndex = 3;
-            // 
-            // btn_delete_transaksi
-            // 
-            this.btn_delete_transaksi.Location = new System.Drawing.Point(616, 601);
-            this.btn_delete_transaksi.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_delete_transaksi.Name = "btn_delete_transaksi";
-            this.btn_delete_transaksi.Size = new System.Drawing.Size(100, 28);
-            this.btn_delete_transaksi.TabIndex = 1;
-            this.btn_delete_transaksi.Text = "Delete";
-            this.btn_delete_transaksi.UseVisualStyleBackColor = true;
-            this.btn_delete_transaksi.Click += new System.EventHandler(this.btn_delete_transaksi_Click);
-            // 
-            // btn_update_transaksi
-            // 
-            this.btn_update_transaksi.Location = new System.Drawing.Point(472, 601);
-            this.btn_update_transaksi.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_update_transaksi.Name = "btn_update_transaksi";
-            this.btn_update_transaksi.Size = new System.Drawing.Size(100, 28);
-            this.btn_update_transaksi.TabIndex = 2;
-            this.btn_update_transaksi.Text = "Update";
-            this.btn_update_transaksi.UseVisualStyleBackColor = true;
-            this.btn_update_transaksi.Click += new System.EventHandler(this.btn_update_transaksi_Click);
             // 
             // lvt
             // 
@@ -145,31 +99,9 @@
             this.lvt.Location = new System.Drawing.Point(0, 0);
             this.lvt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvt.Name = "lvt";
-            this.lvt.Size = new System.Drawing.Size(1780, 558);
+            this.lvt.Size = new System.Drawing.Size(1780, 449);
             this.lvt.TabIndex = 0;
             this.lvt.UseCompatibleStateImageBehavior = false;
-            // 
-            // btn_tampil_transaksi
-            // 
-            this.btn_tampil_transaksi.Location = new System.Drawing.Point(180, 601);
-            this.btn_tampil_transaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_tampil_transaksi.Name = "btn_tampil_transaksi";
-            this.btn_tampil_transaksi.Size = new System.Drawing.Size(137, 23);
-            this.btn_tampil_transaksi.TabIndex = 2;
-            this.btn_tampil_transaksi.Text = "Tampil";
-            this.btn_tampil_transaksi.UseVisualStyleBackColor = true;
-            this.btn_tampil_transaksi.Click += new System.EventHandler(this.btn_tampil_transaksi_Click);
-            // 
-            // btn_tambah_transaksi
-            // 
-            this.btn_tambah_transaksi.Location = new System.Drawing.Point(42, 601);
-            this.btn_tambah_transaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
-            this.btn_tambah_transaksi.Size = new System.Drawing.Size(132, 23);
-            this.btn_tambah_transaksi.TabIndex = 1;
-            this.btn_tambah_transaksi.Text = "Tambah";
-            this.btn_tambah_transaksi.UseVisualStyleBackColor = true;
-            this.btn_tambah_transaksi.Click += new System.EventHandler(this.btn_tambah_transaksi_Click);
             // 
             // TabProduk
             // 
@@ -419,12 +351,121 @@
             this.btn_logout.FillColor = System.Drawing.Color.White;
             this.btn_logout.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_logout.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_logout.Location = new System.Drawing.Point(1463, 33);
+            this.btn_logout.Location = new System.Drawing.Point(1724, 759);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(100, 34);
             this.btn_logout.TabIndex = 30;
             this.btn_logout.Text = "Logout";
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // btn_tambah_transaksi
+            // 
+            this.btn_tambah_transaksi.BorderRadius = 15;
+            this.btn_tambah_transaksi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_tambah_transaksi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_tambah_transaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_tambah_transaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_tambah_transaksi.FillColor = System.Drawing.Color.White;
+            this.btn_tambah_transaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_tambah_transaksi.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_tambah_transaksi.Location = new System.Drawing.Point(103, 759);
+            this.btn_tambah_transaksi.Name = "btn_tambah_transaksi";
+            this.btn_tambah_transaksi.Size = new System.Drawing.Size(100, 34);
+            this.btn_tambah_transaksi.TabIndex = 31;
+            this.btn_tambah_transaksi.Text = "Tambah";
+            // 
+            // btn_tampil_transaksi
+            // 
+            this.btn_tampil_transaksi.BorderRadius = 15;
+            this.btn_tampil_transaksi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_tampil_transaksi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_tampil_transaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_tampil_transaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_tampil_transaksi.FillColor = System.Drawing.Color.White;
+            this.btn_tampil_transaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_tampil_transaksi.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_tampil_transaksi.Location = new System.Drawing.Point(245, 759);
+            this.btn_tampil_transaksi.Name = "btn_tampil_transaksi";
+            this.btn_tampil_transaksi.Size = new System.Drawing.Size(100, 34);
+            this.btn_tampil_transaksi.TabIndex = 32;
+            this.btn_tampil_transaksi.Text = "Tampil";
+            // 
+            // btn_update_transaksi
+            // 
+            this.btn_update_transaksi.BorderRadius = 15;
+            this.btn_update_transaksi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_update_transaksi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_update_transaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_update_transaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_update_transaksi.FillColor = System.Drawing.Color.White;
+            this.btn_update_transaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_update_transaksi.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_update_transaksi.Location = new System.Drawing.Point(520, 759);
+            this.btn_update_transaksi.Name = "btn_update_transaksi";
+            this.btn_update_transaksi.Size = new System.Drawing.Size(100, 34);
+            this.btn_update_transaksi.TabIndex = 33;
+            this.btn_update_transaksi.Text = "Update";
+            // 
+            // btn_delete_transaksi
+            // 
+            this.btn_delete_transaksi.BorderRadius = 15;
+            this.btn_delete_transaksi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delete_transaksi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delete_transaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_delete_transaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_delete_transaksi.FillColor = System.Drawing.Color.White;
+            this.btn_delete_transaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_delete_transaksi.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_delete_transaksi.Location = new System.Drawing.Point(664, 759);
+            this.btn_delete_transaksi.Name = "btn_delete_transaksi";
+            this.btn_delete_transaksi.Size = new System.Drawing.Size(100, 34);
+            this.btn_delete_transaksi.TabIndex = 34;
+            this.btn_delete_transaksi.Text = "Delete";
+            // 
+            // btn_search_transaksi
+            // 
+            this.btn_search_transaksi.BorderRadius = 15;
+            this.btn_search_transaksi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search_transaksi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search_transaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_search_transaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_search_transaksi.FillColor = System.Drawing.Color.White;
+            this.btn_search_transaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_search_transaksi.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_search_transaksi.Location = new System.Drawing.Point(1157, 764);
+            this.btn_search_transaksi.Name = "btn_search_transaksi";
+            this.btn_search_transaksi.Size = new System.Drawing.Size(100, 34);
+            this.btn_search_transaksi.TabIndex = 35;
+            this.btn_search_transaksi.Text = "Search";
+            // 
+            // input_search_transaksi
+            // 
+            this.input_search_transaksi.BorderRadius = 15;
+            this.input_search_transaksi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.input_search_transaksi.DefaultText = "";
+            this.input_search_transaksi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.input_search_transaksi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.input_search_transaksi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.input_search_transaksi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.input_search_transaksi.FillColor = System.Drawing.Color.Gainsboro;
+            this.input_search_transaksi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.input_search_transaksi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.input_search_transaksi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.input_search_transaksi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.input_search_transaksi.IconLeft = ((System.Drawing.Image)(resources.GetObject("input_search_transaksi.IconLeft")));
+            this.input_search_transaksi.IconLeftOffset = new System.Drawing.Point(-8, 0);
+            this.input_search_transaksi.IconLeftSize = new System.Drawing.Size(45, 45);
+            this.input_search_transaksi.IconRightSize = new System.Drawing.Size(50, 50);
+            this.input_search_transaksi.Location = new System.Drawing.Point(822, 759);
+            this.input_search_transaksi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.input_search_transaksi.Multiline = true;
+            this.input_search_transaksi.Name = "input_search_transaksi";
+            this.input_search_transaksi.PasswordChar = '*';
+            this.input_search_transaksi.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.input_search_transaksi.PlaceholderText = "Search";
+            this.input_search_transaksi.SelectedText = "";
+            this.input_search_transaksi.Size = new System.Drawing.Size(250, 42);
+            this.input_search_transaksi.TabIndex = 36;
             // 
             // Dashboard
             // 
@@ -432,6 +473,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1924, 819);
+            this.Controls.Add(this.input_search_transaksi);
+            this.Controls.Add(this.btn_search_transaksi);
+            this.Controls.Add(this.btn_delete_transaksi);
+            this.Controls.Add(this.btn_update_transaksi);
+            this.Controls.Add(this.btn_tampil_transaksi);
+            this.Controls.Add(this.btn_tambah_transaksi);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.status_user);
             this.Controls.Add(this.user_nama);
@@ -442,7 +489,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.TabTransaksi.ResumeLayout(false);
-            this.TabTransaksi.PerformLayout();
             this.TabProduk.ResumeLayout(false);
             this.TabGudang.ResumeLayout(false);
             this.TabUser.ResumeLayout(false);
@@ -459,10 +505,6 @@
         private System.Windows.Forms.TabPage TabGudang;
         private System.Windows.Forms.ListView lvt;
         private System.Windows.Forms.Label user_nama;
-        private System.Windows.Forms.Button btn_tampil_transaksi;
-        private System.Windows.Forms.Button btn_tambah_transaksi;
-        private System.Windows.Forms.Button btn_delete_transaksi;
-        private System.Windows.Forms.Button btn_update_transaksi;
         private System.Windows.Forms.ListView lvp;
         private System.Windows.Forms.ListView lvg;
         private System.Windows.Forms.TabPage TabUser;
@@ -480,9 +522,13 @@
         private System.Windows.Forms.Button btn_update_user;
         private System.Windows.Forms.Button btn_tampil_user;
         private System.Windows.Forms.Button btn_tambah_user;
-        private System.Windows.Forms.Button btn_search_transaksi;
-        private System.Windows.Forms.TextBox input_search_transaksi;
         private System.Windows.Forms.TabPage tabLog;
         private Guna.UI2.WinForms.Guna2Button btn_logout;
+        private Guna.UI2.WinForms.Guna2Button btn_tambah_transaksi;
+        private Guna.UI2.WinForms.Guna2Button btn_tampil_transaksi;
+        private Guna.UI2.WinForms.Guna2Button btn_update_transaksi;
+        private Guna.UI2.WinForms.Guna2Button btn_delete_transaksi;
+        private Guna.UI2.WinForms.Guna2Button btn_search_transaksi;
+        private Guna.UI2.WinForms.Guna2TextBox input_search_transaksi;
     }
 }
